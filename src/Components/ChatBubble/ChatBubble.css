@@ -1,0 +1,58 @@
+p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+monti-container{
+  width: 100%;
+  display: block;
+}
+
+.user-container{
+  width: 100%;
+  display: block;
+  text-align: right;
+}
+
+.user{
+  max-width: 240px;
+  height: auto;
+  display: inline-block;
+  text-align: right;
+  margin: 4px 24px 4px auto;
+  padding: 10px 16px 9px 12px;
+  background-color: #00e9ba;
+  box-shadow: 0 5px 10px 0 rgba(0, 233, 186, 0.32);
+  border-radius: 20px 5px 5px 20px;
+
+  color: #ffffff;
+}
+
+.user-first{
+  border-radius: 20px 20px 5px 20px;  
+}
+.user-last{
+  border-radius: 20px 5px 20px 20px;
+}
+
+.monti{
+  max-width: 240px;
+  height: auto;
+  display: inline-block;
+
+  margin: 4px auto 4px 24px; /*Lav plads til Monti*/
+  padding: 9px 12px 10px 16px;
+  background-color: #ffffff;
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.05);
+  border-radius: 5px 20px 20px 5px;
+
+  color: #262b3d;
+}
+
+.monti-first{
+  border-radius: 20px 20px 20px 5px;  
+}
+.monti-last{
+  border-radius: 5px 20px 20px 20px;
+}

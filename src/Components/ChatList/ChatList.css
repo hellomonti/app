@@ -1,0 +1,4 @@
+#chat-list {
+    overflow-y: scroll;
+    height: 63vh;
+}
