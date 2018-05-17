@@ -4,18 +4,20 @@ export const getData = () => ({
             name: 'start',
             type: 'button',
             bot: {
-                prompts: ["Hello, i'm Monti 👋", "I can help you find areas in the city that matches your state of mind.", "Shall we begin?"],
+                prompts: ["Hello, i'm Monti 👋",
+                          "I can help you find areas in the city that matches your state of mind.",
+                          "Shall we begin?"],
                 responds: null
             },
             user: {
                 options: [
                     {
-                        answer: 'Find areas?',
+                        answer: 'How can you find areas?',
                         value: 1,
                         next: "findAreas",
                     },
                     {
-                        answer: 'How do you match?',
+                        answer: 'How do you match areas with my state of mind?',
                         value: 2,
                         next: "howDoYouMatch",
                     },
@@ -35,13 +37,15 @@ export const getData = () => ({
             name: 'findAreas',
             type: 'button',
             bot: {
-                prompts: ["I can hear 👂, smell 👃 and see 👀 things people normally cannot in the city.", "Me and my other friends measure this all the time.", "And we use this information to find areas."],
+                prompts: ["I can hear 👂, smell 👃 and see 👀 things in the city that people can't perceive.",
+                          "Me and my other friends collect this knowledge all the time.",
+                          "And we can use this information to find suitable locations that cater for your mood."],
                 responds: null
             },
             user: {
                 options: [
                     {
-                        answer: 'You and your friends?',
+                        answer: 'Wait, who are you and your friends?',
                         value: 1,
                         next: "youAndYourFriends",
                     },
@@ -61,7 +65,9 @@ export const getData = () => ({
             name: 'youAndYourFriends',
             type: 'button',
             bot: {
-                prompts: ["Well there are sensors like me all over town.", "And we all work together."],
+                prompts: ["Well, I'm a City Probe. I sense air pollution💨, noise🔊 and light☀️.",
+                          "There are several sensors like me all over town.",
+                          "And we all work together."],
                 responds: null
             },
             user: {
@@ -82,7 +88,10 @@ export const getData = () => ({
             name: 'howDoYouMatch',
             type: 'button',
             bot: {
-                prompts: ["From my information about the city and your answers I can personalise a specific area to you.", "So tell me how you feel and I can help you find solitutude."],
+                //prompts: ["From my sensory information about the state of the city and what you tell me about yourself, I can personalise a specific area to you.", "So tell me how you feel and I can help you find solitutude."],
+                prompts: ["I've been practising some wacky mathematical problems! 🤓 The equation is: ",
+                          "My information about the city + your current state mind = a suitable location for you to find solitude.",
+                          "So tell me how you feel and I'll find you somewhere to be at peace."],
                 responds: null
             },
             user: {
@@ -103,7 +112,7 @@ export const getData = () => ({
             name: 'solitude',
             type: 'button',
             bot: {
-                prompts: ["It's a state of mind, where you are able to relax, be creative, …", "Well you just feel content and reflects over issues."],
+                prompts: ["It's a state of mind, where you are able to relax, be creative", "…", "Well, a feeling of contentment and comfort. 😌"],
                 responds: ["Okay, I'm gonna ask you a few questions", "When you answer think of how you feel right now 💖"]
             },
             user: {
@@ -206,7 +215,7 @@ export const getData = () => ({
                         value: 4
                     },
                     {
-                        answer: 'I feel very reaxed',
+                        answer: 'I feel very relaxed',
                         value: 5
                     },
                 ],
@@ -220,29 +229,29 @@ export const getData = () => ({
             name: 'clearThoughts',
             type: 'slider',
             bot: {
-                prompts: ['How clear are your thoughts?'],
+                prompts: ['How clear are your thoughts right now?'],
                 responds: []
             },
             user: {
                 options: [
                     {
-                        answer: "I can't think clearly at all",
+                        answer: "I'm not thinking clearly at all",
                         value: 1
                     },
                     {
-                        answer: "I can't think clearly",
+                        answer: "I'm not thinking very clearly",
                         value: 2
                     },
                     {
-                        answer: 'I slightly think clearly',
+                        answer: "I'm thinking somewhat clearly",
                         value: 3
                     },
                     {
-                        answer: 'I think clearly',
+                        answer: "I'm thinking pretty clearly",
                         value: 4
                     },
                     {
-                        answer: 'I think very clearly',
+                        answer: "I'm thinking very clearly",
                         value: 5
                     },
                 ],
