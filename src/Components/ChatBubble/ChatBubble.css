@@ -2,6 +2,7 @@ p {
   margin: 0;
   font-size: 14px;
   line-height: 1.5;
+  font-family: Proxima Nova;
 }
 
 monti-container{
@@ -25,12 +26,12 @@ monti-container{
   background-color: #00e9ba;
   box-shadow: 0 5px 10px 0 rgba(0, 233, 186, 0.32);
   border-radius: 20px 5px 5px 20px;
-
+  animation: 0.3s ease-out 0s 1 userBubbleAnimation;
   color: #ffffff;
 }
 
 .user-first{
-  border-radius: 20px 20px 5px 20px;  
+  border-radius: 20px 20px 5px 20px;
 }
 .user-last{
   border-radius: 20px 5px 20px 20px;
@@ -47,12 +48,42 @@ monti-container{
   box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.05);
   border-radius: 5px 20px 20px 5px;
 
+  animation: 0.3s ease-out 0s 1 montiBubbleAnimation;
+
   color: #262b3d;
 }
 
 .monti-first{
-  border-radius: 20px 20px 20px 5px;  
+  border-radius: 20px 20px 20px 5px;
 }
 .monti-last{
   border-radius: 5px 20px 20px 20px;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+@keyframes userBubbleAnimation {
+  0% {
+    transform: scale(0.1);
+  }
+  90% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes montiBubbleAnimation {
+  0% {
+    transform: translateX(-30%) scale(0.1);
+  }
+  90% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: translateX(0) scale(1);
+  }
 }

@@ -19,7 +19,8 @@ class App extends Component {
       chatListEntities: [],
       shouldScroll: false,
       step: 'introduction',
-      conversationIndex: 0
+      conversationIndex: 0,
+      isActionAreaVisible: false
     })
   }
 
@@ -29,6 +30,12 @@ class App extends Component {
     newChatListEntities.push(this.state.data.introConversation[this.state.currentStep]);
 
     this.setState({ chatListEntities: newChatListEntities });
+  }
+
+  displayActionArea = (value) => {
+    this.setState({
+      isActionAreaVisible: value
+    });
   }
 
   updateStateValue = (entityType) => {
@@ -97,10 +104,16 @@ class App extends Component {
 
     return (
       <div>
-        <ChatList chatListEntities={chatListEntities} />
+        <ChatList chatListEntities={chatListEntities} showActionArea={this.displayActionArea} />
         {
           chatListEntities.length &&
-          <ActionArea entityType={chatListEntities[chatListEntities.length - 1]} updateStateValue={this.updateStateValue} shouldScroll={shouldScroll} />
+          <ActionArea
+            entityType={chatListEntities[chatListEntities.length - 1]}
+            updateStateValue={this.updateStateValue}
+            shouldScroll={shouldScroll}
+            isActionAreaVisible={this.state.isActionAreaVisible}
+            displayActionArea={this.displayActionArea}
+          />
         }
       </div>
     )
