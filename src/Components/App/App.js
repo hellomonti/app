@@ -30,7 +30,19 @@ class App extends Component {
     newChatListEntities.push(this.state.data.introConversation[this.state.currentStep]);
 
     this.setState({ chatListEntities: newChatListEntities });
+
+    navigator.geolocation.getCurrentPosition((pos) => {
+      // const {} = pos.coords;
+      console.log(pos.coords.latitude);
+      console.log(pos.coords.longitude);
+
+
+    });
   }
+
+  // mapLinkCreator = () => {
+  //   let link = 
+  // }
 
   updateStateValue = (entityType) => {
     let newData = this.state.data;
@@ -70,11 +82,11 @@ class App extends Component {
     if (this.state.step === 'conversation') {
       this.changeStep(conversationKeys);
       newChatListEntities.push(this.state.data.conversation[conversationKeys[this.state.conversationIndex]]);
-      
+
       // console.log('New', newChatListEntities.length);
       // console.log('Keys', conversationKeys.length)
 
-      if(newChatListEntities.length === conversationKeys.length) {
+      if (newChatListEntities.length === conversationKeys.length) {
         this.setState({
           step: 'suggestion'
         })
@@ -92,9 +104,9 @@ class App extends Component {
     let newConversationIndex = this.state.conversationIndex;
     newConversationIndex++;
 
-    this.setState({currentStep: conversationKeys[newConversationIndex]});
+    this.setState({ currentStep: conversationKeys[newConversationIndex] });
 
-    this.setState({conversationIndex: newConversationIndex});
+    this.setState({ conversationIndex: newConversationIndex });
   }
 
   getConversationKeys = () => Object.keys(this.state.data.conversation);
@@ -108,10 +120,10 @@ class App extends Component {
     return (
       <div>
         {/* <Suggestion /> */}
-        
+
 
         <ChatList chatListEntities={chatListEntities} />
-        { step !== 'suggestion' ?
+        {step !== 'suggestion' ?
           chatListEntities.length &&
           <ActionArea entityType={chatListEntities[chatListEntities.length - 1]} updateStateValue={this.updateStateValue} shouldScroll={shouldScroll} />
           :

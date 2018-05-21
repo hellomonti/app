@@ -5,7 +5,19 @@ class Suggestion extends Component {
 
     componentDidMount() {
         const elem = document.getElementById('card-wrapper');
-        elem.style.backgroundImage = "url('./assets/img/jomfruAneParken.jpg')"
+        elem.style.backgroundImage = "url('./assets/img/jomfruAneParken.jpg')";
+    }
+
+    sendToMaps = () => {
+        // const link = 'http://maps.apple.com/?daddr=San+Francisco&dirflg=d&t=h';
+        // window.location.assign(encodeURI(link));
+
+        // navigator.geolocation.getCurrentPosition((pos) => {
+        //     // const {} = pos.coords;
+        //     console.log(pos.coords);
+        // } );
+        // console.log(navigator.userAgent);
+        // console.log(navigator.userAgent.includes('iPhone'));
     }
 
     render() {
@@ -14,7 +26,7 @@ class Suggestion extends Component {
                 <ImageBar names={['sun', 'flower', 'anchor']} />
                 <div className='footer-background' />
                 <InfoFooter name='Jomfru Ane Parken' time='15 min' distance='2,4 km' />
-                <Fab type='navigation' />
+                <Fab onClick={this.sendToMaps} type='navigation' />
             </div>
         );
     }
@@ -39,18 +51,21 @@ const ImageBar = ({ names }) => {
     return (
         <div className='bar-wrapper'>
             {names.map(name =>
-                <img style={{marginRight: '5px', marginBottom: '-5px', width: '24px', height: '24px'}} key={name} src={`./assets/img/${name}.svg`} />
+                <img style={{ marginRight: '5px', marginBottom: '-5px', width: '24px', height: '24px' }} key={name} src={`./assets/img/${name}.svg`} />
             )}
         </div>
     )
 }
 
-const Fab = ({ type }) => {
+const Fab = ({ type, onClick }) => {
+    const link = 'https://maps.apple.com/'
+
     return (
-        <div className='fab'>
-            <img style={{transform: 'translate(15px, 15px)'}} src={`./assets/img/${type}.svg`} />
-        </div>
+        <a href={link} className='fab'>
+            <img style={{ transform: 'translate(15px, 15px)' }} src={`./assets/img/${type}.svg`} />
+        </a>
     )
+
 }
 
 export default Suggestion;
