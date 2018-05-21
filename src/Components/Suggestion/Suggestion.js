@@ -57,15 +57,38 @@ const ImageBar = ({ names }) => {
     )
 }
 
-const Fab = ({ type, onClick }) => {
-    const link = 'http://maps.apple.com/?daddr=San+Francisco&dirflg=d&t=h'
+class Fab extends Component {
+    state = {
+        link: ''
+    }
+    
+    render() {
+        const { type, onClick } = this.props;
 
-    return (
-        <a href={link} className='fab'>
-            <img style={{ transform: 'translate(15px, 15px)' }} src={`./assets/img/${type}.svg`} />
-        </a>
-    )
+        navigator.geolocation.getCurrentPosition(pos => {
+            let link = `http://maps.apple.com/?q=${pos.coords.latitude},${pos.coords.longitude}`;
 
+            console.log(link);
+
+            this.setState({ link });
+        });
+
+        // 57.0509385,9.9213374
+
+        return (
+            <a href={`http://maps.apple.com/?q=57.050988,9.922470`} className='fab'>
+                <img style={{ transform: 'translate(15px, 15px)' }} src={`./assets/img/${type}.svg`} />
+            </a>
+        )
+    }
+}
+
+const linkCreator = () => {
+    const link = 'http://maps.apple.com/?daddr=San+Francisco&dirflg=d&t=h';
+
+
+
+    return link
 }
 
 export default Suggestion;
