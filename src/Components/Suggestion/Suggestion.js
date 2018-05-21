@@ -61,7 +61,7 @@ class Fab extends Component {
     state = {
         link: ''
     }
-    
+
     render() {
         const { type, onClick } = this.props;
 
