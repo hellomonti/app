@@ -3,6 +3,7 @@
     background-color: white;
     box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.24), 0 0 8px 0 rgba(0, 0, 0, 0.12);
     padding-top: 24px; */
+    animation: 0.4s ease-out 0s 1 sliderShow;
 }
 
 .slider-container {
@@ -130,4 +131,13 @@
     position: absolute;
     top: -10px;
     /* z-index: -1; */
+}
+
+@keyframes sliderShow {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

@@ -7,7 +7,7 @@ class ChatEntity extends Component {
     delayTime = 1600;
 
     entityIsDone = () => {
-      let waitTime = this.props.entityType.bot.prompts.length * this.delayTime;
+      let waitTime = this.props.entityType.bot.prompts.length * this.delayTime + this.delayTime;
 
     setTimeout(() => {
       this.props.showActionArea(true)
