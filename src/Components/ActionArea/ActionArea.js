@@ -12,6 +12,7 @@ class ActionArea extends Component {
         newEntityType.user.answer.answer = answer;
 
         this.props.updateStateValue(newEntityType);
+        this.props.displayActionArea(false);
     }
 
     render() {
@@ -21,11 +22,13 @@ class ActionArea extends Component {
             <div className='action-area'>
                 {entityType.type === 'button' ?
                     entityType.user.options.map(option =>
+                      this.props.isActionAreaVisible &&
                         <div key={option.answer} style={{ textAlign: 'center', marginBottom: '10px' }}>
                             <Button text={option.answer} returnValue={option.value} onClick={this.updateValue} />
                         </div>
                     )
                     :
+                    this.props.isActionAreaVisible &&
                     <Slider sliderData={entityType} updateValue={this.updateValue} />
                 }
             </div>

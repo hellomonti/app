@@ -20,7 +20,8 @@ class App extends Component {
       chatListEntities: [],
       shouldScroll: false,
       step: 'introduction',
-      conversationIndex: 0
+      conversationIndex: 0,
+      isActionAreaVisible: false
     })
   }
 
@@ -40,9 +41,11 @@ class App extends Component {
     });
   }
 
-  // mapLinkCreator = () => {
-  //   let link = 
-  // }
+  displayActionArea = (value) => {
+    this.setState({
+      isActionAreaVisible: value
+    });
+  }
 
   updateStateValue = (entityType) => {
     let newData = this.state.data;
@@ -119,15 +122,22 @@ class App extends Component {
 
     return (
       <div>
-        {/* <Suggestion /> */}
-
-
-        <ChatList chatListEntities={chatListEntities} />
+        <ChatList
+          chatListEntities={chatListEntities}
+          displayActionArea={this.displayActionArea}
+        />
         {step !== 'suggestion' ?
           chatListEntities.length &&
-          <ActionArea entityType={chatListEntities[chatListEntities.length - 1]} updateStateValue={this.updateStateValue} shouldScroll={shouldScroll} />
+          <ActionArea
+            entityType={chatListEntities[chatListEntities.length - 1]}
+            updateStateValue={this.updateStateValue}
+            shouldScroll={shouldScroll}
+            isActionAreaVisible={this.state.isActionAreaVisible}
+            displayActionArea={this.displayActionArea}
+          />
           :
           <Suggestion />
+
         }
       </div>
     )

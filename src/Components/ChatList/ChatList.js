@@ -5,21 +5,26 @@ import './ChatList.css';
 class ChatList extends Component {
 
     componentDidUpdate() {
-        // if (this.props.shouldScroll) {
-        document.getElementById('chat-list').scrollTop += 1000;
-        // }
+        this.scrollToBottom();
+    }
 
+    scrollToBottom = () => {
+      document.getElementById('chat-list').scrollTop += 1000;
     }
 
     render() {
-        console.log(this.props.chatListEntities);
+        console.log(this.props);
         const { chatListEntities, shouldScroll } = this.props;
 
         return (
             <div id='chat-list'>
                 {
                     chatListEntities.map(entity =>
-                        <ChatEntity key={entity.name} entityType={entity} />
+                        <ChatEntity
+                          key={entity.name}
+                          entityType={entity}
+                          scrollToBottom={this.scrollToBottom}
+                          displayActionArea={this.props.displayActionArea}/>
                     )
                 }
             </div>
