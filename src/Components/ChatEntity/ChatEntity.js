@@ -20,6 +20,10 @@ class ChatEntity extends Component {
       }, waitTime)
     }
 
+    getyCoordinateLastBubble = (y) => {
+        console.log(y)
+    }
+
     render() {
         const { entityType } = this.props;
 
@@ -33,6 +37,7 @@ class ChatEntity extends Component {
                   key={i}
                   wait={i * this.delayTime + this.delayTime}
                   scrollToBottom={this.props.scrollToBottom}
+                  getyC={this.getyCoordinateLastBubble}
               />
           );
 
