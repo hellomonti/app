@@ -76,7 +76,7 @@ class Fab extends Component {
         // 57.0509385,9.9213374
 
         return (
-            <a href={`http://maps.apple.com/?q=57.050988,9.922470`} className='fab'>
+            <a href={`http://maps.apple.com/?daddr=57.050988,9.922470&saddr=57.0134146,9.9889349&dirflg=w`} className='fab'>
                 <img style={{ transform: 'translate(15px, 15px)' }} src={`./assets/img/${type}.svg`} />
             </a>
         )
