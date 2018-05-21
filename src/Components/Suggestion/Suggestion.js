@@ -66,29 +66,17 @@ class Fab extends Component {
         const { type, onClick } = this.props;
 
         navigator.geolocation.getCurrentPosition(pos => {
-            let link = `http://maps.apple.com/?q=${pos.coords.latitude},${pos.coords.longitude}`;
-
+            let link = `http://maps.apple.com/?daddr=57.050988,9.922470&saddr=${pos.coords.latitude},${pos.coords.longitude}&dirflg=w`;
             console.log(link);
-
             this.setState({ link });
         });
 
-        // 57.0509385,9.9213374
-
         return (
-            <a href={`http://maps.apple.com/?daddr=57.050988,9.922470&saddr=57.0134146,9.9889349&dirflg=w`} className='fab'>
-                <img style={{ transform: 'translate(15px, 15px)' }} src={`./assets/img/${type}.svg`} />
+            <a href={this.state.link} className='fab'>
+                <img style={{ transform: 'translate(16px, 15px)' }} src={`./assets/img/${type}.svg`} />
             </a>
         )
     }
-}
-
-const linkCreator = () => {
-    const link = 'http://maps.apple.com/?daddr=San+Francisco&dirflg=d&t=h';
-
-
-
-    return link
 }
 
 export default Suggestion;
