@@ -69,7 +69,16 @@ class App extends Component {
     }
     if (this.state.step === 'conversation') {
       this.changeStep(conversationKeys);
-      newChatListEntities.push(this.state.data.conversation[conversationKeys[this.state.conversationIndex]])
+      newChatListEntities.push(this.state.data.conversation[conversationKeys[this.state.conversationIndex]]);
+      
+      // console.log('New', newChatListEntities.length);
+      // console.log('Keys', conversationKeys.length)
+
+      if(newChatListEntities.length === conversationKeys.length) {
+        this.setState({
+          step: 'suggestion'
+        })
+      }
     }
 
 
@@ -91,21 +100,23 @@ class App extends Component {
   getConversationKeys = () => Object.keys(this.state.data.conversation);
 
   render() {
-    const { data, currentStep, chatListEntities, shouldScroll } = this.state;
+    const { data, currentStep, chatListEntities, shouldScroll, step } = this.state;
     const { conversation, introConversation } = data;
 
     // console.log("something", chatListEntities[chatListEntities.length - 1]);
 
     return (
       <div>
-        <Suggestion />
+        {/* <Suggestion /> */}
         
 
-        {/* <ChatList chatListEntities={chatListEntities} />
-        {
+        <ChatList chatListEntities={chatListEntities} />
+        { step !== 'suggestion' ?
           chatListEntities.length &&
           <ActionArea entityType={chatListEntities[chatListEntities.length - 1]} updateStateValue={this.updateStateValue} shouldScroll={shouldScroll} />
-        } */}
+          :
+          <Suggestion />
+        }
       </div>
     )
   }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: sketchtool 50 (54983) - http://www.bohemiancoding.com/sketch -->
+    <!-- Generator: sketchtool 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
     <title>DB8C91DB-6A61-461A-A761-BAA10DFF7EC6</title>
     <desc>Created with sketchtool.</desc>
     <defs>
@@ -12,7 +12,7 @@
                 <use xlink:href="#path-1"></use>
             </mask>
             <use id="Combined-Shape" fill="#262B3D" fill-rule="nonzero" xlink:href="#path-1"></use>
-            <g id="UI/Color/Flat/Body" mask="url(#mask-2)" fill="#262B3D">
+            <g id="UI/Color/Flat/White" mask="url(#mask-2)" fill="#FFFFFF">
                 <rect id="Base" x="0" y="0" width="24" height="24"></rect>
             </g>
         </g>

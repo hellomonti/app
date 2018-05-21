@@ -2,12 +2,19 @@ import React, { Component } from 'react';
 import './Suggestion.css';
 
 class Suggestion extends Component {
+
+    componentDidMount() {
+        const elem = document.getElementById('card-wrapper');
+        elem.style.backgroundImage = "url('./assets/img/jomfruAneParken.jpg')"
+    }
+
     render() {
         return (
-            <div className='card-wrapper'>
+            <div id='card-wrapper'>
                 <ImageBar names={['sun', 'flower', 'anchor']} />
+                <div className='footer-background' />
                 <InfoFooter name='Jomfru Ane Parken' time='15 min' distance='2,4 km' />
-                <Fab name='navigation' />
+                <Fab type='navigation' />
             </div>
         );
     }
@@ -32,7 +39,7 @@ const ImageBar = ({ names }) => {
     return (
         <div className='bar-wrapper'>
             {names.map(name =>
-                <img key={name} src={`./assets/img/${name}.svg`} />
+                <img style={{marginRight: '5px', marginBottom: '-5px', width: '24px', height: '24px'}} key={name} src={`./assets/img/${name}.svg`} />
             )}
         </div>
     )
@@ -41,7 +48,7 @@ const ImageBar = ({ names }) => {
 const Fab = ({ type }) => {
     return (
         <div className='fab'>
-            <img src={type} />
+            <img style={{transform: 'translate(15px, 15px)'}} src={`./assets/img/${type}.svg`} />
         </div>
     )
 }
