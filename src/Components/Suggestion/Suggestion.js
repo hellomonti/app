@@ -58,7 +58,7 @@ const ImageBar = ({ names }) => {
 }
 
 const Fab = ({ type, onClick }) => {
-    const link = 'https://maps.apple.com/'
+    const link = 'http://maps.apple.com/?daddr=San+Francisco&dirflg=d&t=h'
 
     return (
         <a href={link} className='fab'>
