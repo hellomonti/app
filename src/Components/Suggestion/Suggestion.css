@@ -1,0 +1,80 @@
+.card-wrapper {
+    width: 375px;
+    height: 320px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 8px 10px 1px rgba(0, 0, 0, 0.14);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: greenyellow;
+}
+
+.info-footer {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    height: 68px;
+    opacity: 0.5;
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+    background-color: #262b3d;
+    width: 100%;
+    padding-top: 13px;
+    padding-left: 16px;
+}
+
+.suggestion-information {
+    font-family: Proxima Nova;
+    font-size: 22px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.45;
+    letter-spacing: normal;
+    color: #00e9ba;
+}
+
+.suggestion-distance {
+    font-family: Proxima Nova;
+    font-size: 18px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.33;
+    letter-spacing: normal;
+    color: #b0b0b1;
+}
+
+.suggestion-name {
+    font-family: Proxima Nova;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #ffffff;
+}
+
+.bar-wrapper {
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+    background-color: rgba(255, 255, 255, 0.5);
+    display: inline-block;
+    padding: 8px;
+    position: absolute;
+    top: 24px;
+}
+
+.fab {
+    width: 56px;
+    height: 56px;
+    background-color: #00e9ba;
+    border-radius: 56px;
+    position: absolute;
+    right: 16px;
+    bottom: 52px;
+}

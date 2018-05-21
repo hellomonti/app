@@ -5,6 +5,7 @@ import ChatEntity from '../ChatEntity/ChatEntity';
 import ActionArea from '../ActionArea/ActionArea';
 import { getData } from '../../Data/dataStructure';
 import ChatList from '../ChatList/ChatList';
+import Suggestion from '../Suggestion/Suggestion';
 
 class App extends Component {
 
@@ -97,11 +98,14 @@ class App extends Component {
 
     return (
       <div>
-        <ChatList chatListEntities={chatListEntities} />
+        <Suggestion />
+        
+
+        {/* <ChatList chatListEntities={chatListEntities} />
         {
           chatListEntities.length &&
           <ActionArea entityType={chatListEntities[chatListEntities.length - 1]} updateStateValue={this.updateStateValue} shouldScroll={shouldScroll} />
-        }
+        } */}
       </div>
     )
   }
