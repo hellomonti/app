@@ -5,25 +5,27 @@
   cursor: pointer;
   text-align: left;
   border: 0;
+  outline: 0;
   border-radius: 20px;
   margin: 0 auto;
   background-color: #00e9ba;
   font-family: Proxima Nova;
-  font-size: 14px;
-  font-weight: 600;
+  font-size: 16px;
+  font-weight: 500;
   color: #ffffff;
 
   animation: 0.3s ease-out 0s 1 buttonShow;
 }
 
 .button:active {
-  transform: translate(0, 2px);
+  opacity: 0.6;
+  transform: scale(0.97);
 }
 
 .icon {
   width: 24px;
   height: 24px;
-  margin: -4px -14px -10px 10px;
+  margin: -3px -14px -10px 10px;
   object-fit: contain;
   float: right;
 }
