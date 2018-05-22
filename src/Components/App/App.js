@@ -31,22 +31,6 @@ class App extends Component {
     newChatListEntities.push(this.state.data.introConversation[this.state.currentStep]);
 
     this.setState({ chatListEntities: newChatListEntities });
-
-    navigator.geolocation.getCurrentPosition(pos => {
-      let distance = require('google-distance-matrix');
-
-      let origins = [`${pos.coords.latitude},${pos.coords.longitude}`];
-      let destinations = [`57.050988,9.922470`];
-
-      distance.mode('walking');
-
-      distance.matrix(origins, destinations, function (err, distances) {
-        if (!err) {
-          console.log(distances.rows[0].elements[0].distance);
-          console.log(distances.rows[0].elements[0].duration);
-        }
-      })
-    });
   }
 
   displayActionArea = (value) => {

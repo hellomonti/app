@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Suggestion.css';
+import axios from 'axios';
 
 class Suggestion extends Component {
 
@@ -13,25 +14,15 @@ class Suggestion extends Component {
         elem.style.backgroundImage = "url('./assets/img/jomfruAneParken.jpg')";
 
         navigator.geolocation.getCurrentPosition(pos => {
-            let distance = require('google-distance-matrix');
-      
-            let origins = [`${pos.coords.latitude},${pos.coords.longitude}`];
-            let destinations = [`57.050988,9.922470`];
-      
-            distance.mode('walking');
-      
-            distance.matrix(origins, destinations, (err, distances) => {
-              if (!err) {
-                console.log(distances.rows[0].elements[0].distance);
-                console.log(distances.rows[0].elements[0].duration);
+            const link = encodeURI(`https://www.kontinemt.dk/distance?origins=${pos.coords.latitude},${pos.coords.longitude}&destinations=57.050988,9.922470`);
 
+            axios.get(link).then(p =>
                 this.setState({
-                    distance: distances.rows[0].elements[0].distance,
-                    duration: distances.rows[0].elements[0].duration
+                    distance: p.data.rows[0].elements[0].distance,
+                    duration: p.data.rows[0].elements[0].duration
                 })
-              }
-            })
-          });
+            )
+        });
     }
 
     render() {
