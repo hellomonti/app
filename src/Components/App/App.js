@@ -43,8 +43,6 @@ class App extends Component {
     let newData = this.state.data;
     let value = entityType.user.answer.value;
 
-    console.log(entityType);
-
     newData.conversation[entityType.name] = entityType;
 
     if (entityType.type === 'button') {
@@ -67,7 +65,6 @@ class App extends Component {
       if (!(entityType.user.options[value - 1].next === 'goToConversation')) {
         newChatListEntities.push(this.state.data.introConversation[entityType.user.options[value - 1].next]);
       } else {
-        // console.log("something", this.state.data.conversation['energy'])
         newChatListEntities.push(this.state.data.conversation[conversationKeys[this.state.conversationIndex]])
         this.setState({ currentStep: this.state.conversationIndex });
         this.setState({ step: 'conversation' });
@@ -78,21 +75,14 @@ class App extends Component {
       this.changeStep(conversationKeys);
       newChatListEntities.push(this.state.data.conversation[conversationKeys[this.state.conversationIndex]]);
 
-      // console.log('New', newChatListEntities.length);
-      // console.log('Keys', conversationKeys.length)
-
-      if (newChatListEntities.length === conversationKeys.length +1) {
+      if (newChatListEntities.length === conversationKeys.length + 1) {
         this.setState({
           step: 'suggestion'
         })
       }
     }
 
-
     this.setState({ chatListEntities: newChatListEntities });
-
-
-    // this.setState({shouldScroll: true})
   }
 
   changeStep = (conversationKeys) => {
@@ -109,8 +99,6 @@ class App extends Component {
   render() {
     const { data, currentStep, chatListEntities, shouldScroll, step } = this.state;
     const { conversation, introConversation } = data;
-
-    // console.log("something", chatListEntities[chatListEntities.length - 1]);
 
     return (
       <div>
