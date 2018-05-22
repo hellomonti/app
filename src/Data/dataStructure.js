@@ -158,7 +158,7 @@ export const getData = () => ({
             type: 'slider',
             bot: {
                 prompts: ['How much energy do you have to spare?'],
-                responds: []
+                responds: ['YOU NEED SOME FUCKING FRESH AIR#!', 'woooow2','woooow3']
             },
             user: {
                 options: [

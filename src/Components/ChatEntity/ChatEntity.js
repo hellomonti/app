@@ -23,13 +23,17 @@ class ChatEntity extends Component {
     render() {
         const { entityType } = this.props;
 
+        const answer = entityType.user.answer;
+        const prompts = entityType.bot.prompts;
+        const responds = entityType.bot.responds;
+
         const chatBubbleElements =
-          entityType.bot.prompts.map((prompt, i) =>
+          prompts.map((prompt, i) =>
               <ChatBubble
                   chatbubbleContent={prompt}
                   sender='monti'
                   first={i === 0}
-                  last={entityType.bot.prompts.length - 1 === i}
+                  last={prompts.length - 1 === i}
                   key={i}
                   wait={i * this.delayTime + this.delayTime}
                   scrollToBottom={this.props.scrollToBottom}
@@ -42,11 +46,22 @@ class ChatEntity extends Component {
                   chatBubbleElements
                 }
                 {
-                    entityType.user.answer.answer &&
+                    answer.answer &&
                     <ChatBubble
-                        chatbubbleContent={entityType.user.answer.answer}
+                        chatbubbleContent={answer.answer}
                         sender='user'
                         first
+                        scrollToBottom={this.props.scrollToBottom}
+                    >
+                    </ChatBubble>
+                }
+                {
+                    answer.answer && responds && responds.length>0 &&
+                    <ChatBubble
+                        chatbubbleContent={responds[answer.value]}
+                        sender='monti'
+                        first
+                        wait={this.delayTime/2}
                         scrollToBottom={this.props.scrollToBottom}
                     >
                     </ChatBubble>

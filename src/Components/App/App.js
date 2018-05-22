@@ -89,7 +89,7 @@ class App extends Component {
       // console.log('New', newChatListEntities.length);
       // console.log('Keys', conversationKeys.length)
 
-      if (newChatListEntities.length === conversationKeys.length) {
+      if (newChatListEntities.length === conversationKeys.length +1) {
         this.setState({
           step: 'suggestion'
         })
