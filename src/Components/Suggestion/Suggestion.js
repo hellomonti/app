@@ -3,41 +3,56 @@ import './Suggestion.css';
 
 class Suggestion extends Component {
 
+    state = {
+        distance: {},
+        duration: {}
+    }
+
     componentDidMount() {
         const elem = document.getElementById('card-wrapper');
         elem.style.backgroundImage = "url('./assets/img/jomfruAneParken.jpg')";
-    }
 
-    sendToMaps = () => {
-        // const link = 'http://maps.apple.com/?daddr=San+Francisco&dirflg=d&t=h';
-        // window.location.assign(encodeURI(link));
+        navigator.geolocation.getCurrentPosition(pos => {
+            let distance = require('google-distance-matrix');
+      
+            let origins = [`${pos.coords.latitude},${pos.coords.longitude}`];
+            let destinations = [`57.050988,9.922470`];
+      
+            distance.mode('walking');
+      
+            distance.matrix(origins, destinations, (err, distances) => {
+              if (!err) {
+                console.log(distances.rows[0].elements[0].distance);
+                console.log(distances.rows[0].elements[0].duration);
 
-        // navigator.geolocation.getCurrentPosition((pos) => {
-        //     // const {} = pos.coords;
-        //     console.log(pos.coords);
-        // } );
-        // console.log(navigator.userAgent);
-        // console.log(navigator.userAgent.includes('iPhone'));
+                this.setState({
+                    distance: distances.rows[0].elements[0].distance,
+                    duration: distances.rows[0].elements[0].duration
+                })
+              }
+            })
+          });
     }
 
     render() {
+        const { duration, distance } = this.state;
         return (
             <div id='card-wrapper'>
                 <ImageBar names={['sun', 'flower', 'anchor']} />
                 <div className='footer-background' />
-                <InfoFooter name='Jomfru Ane Parken' time='15 min' distance='2,4 km' />
+                <InfoFooter name='Jomfru Ane Parken' duration={duration.text} distance={distance.text} />
                 <Fab onClick={this.sendToMaps} type='navigation' />
             </div>
         );
     }
 }
 
-const InfoFooter = ({ name, time, distance }) => {
+const InfoFooter = ({ name, duration, distance }) => {
     return (
         <div className='info-footer'>
             <div className='text-wrapper'>
                 <div className='suggestion-information'>
-                    {time} <span className='suggestion-distance'>({distance})</span>
+                    {duration} <span className='suggestion-distance'>({distance})</span>
                 </div>
                 <div className='suggestion-name'>
                     {name}

@@ -32,12 +32,20 @@ class App extends Component {
 
     this.setState({ chatListEntities: newChatListEntities });
 
-    navigator.geolocation.getCurrentPosition((pos) => {
-      // const {} = pos.coords;
-      console.log(pos.coords.latitude);
-      console.log(pos.coords.longitude);
+    navigator.geolocation.getCurrentPosition(pos => {
+      let distance = require('google-distance-matrix');
 
+      let origins = [`${pos.coords.latitude},${pos.coords.longitude}`];
+      let destinations = [`57.050988,9.922470`];
 
+      distance.mode('walking');
+
+      distance.matrix(origins, destinations, function (err, distances) {
+        if (!err) {
+          console.log(distances.rows[0].elements[0].distance);
+          console.log(distances.rows[0].elements[0].duration);
+        }
+      })
     });
   }
 

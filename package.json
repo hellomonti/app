@@ -8,7 +8,9 @@
     "react-scripts": "1.0.13"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "create-react-class": "^15.6.3",
+    "google-distance-matrix": "^1.1.1",
     "rc-slider": "^8.6.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
