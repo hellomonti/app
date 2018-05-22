@@ -6,11 +6,6 @@
       "src": "favicon.png",
       "sizes": "194x194",
       "type": "image/png"
-    },
-    {
-      "src": "touch-icon-iphone.png",
-      "sizes": "180x180",
-      "type": "image/png"
     }
   ],
   "start_url": "./index.html",
