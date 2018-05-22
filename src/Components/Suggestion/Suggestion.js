@@ -29,10 +29,10 @@ class Suggestion extends Component {
         const { duration, distance } = this.state;
         return (
             <div id='card-wrapper'>
-                <ImageBar names={['sun', 'flower', 'anchor']} />
+                {/* <ImageBar names={['sun', 'flower', 'anchor']} /> */}
                 <div className='footer-background' />
                 <InfoFooter name='Jomfru Ane Parken' duration={duration.text} distance={distance.text} />
-                <Fab onClick={this.sendToMaps} type='navigation' />
+                <Fab onClick={this.sendToMaps} type='navigation' /> 
             </div>
         );
     }
