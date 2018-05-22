@@ -151,14 +151,18 @@ export const getData = () => ({
             }
         },
     },
-    
+
+    extras: [
+        'extra1', 'extra2', 'extra3', 'extra4', 'extra5'
+    ],
+
     conversation: {
         energy: {
             name: 'energy',
             type: 'slider',
             bot: {
                 prompts: ['How much energy do you have to spare?'],
-                responds: ['YOU NEED SOME FUCKING FRESH AIR#!', 'woooow2','woooow3']
+                responds: ['YOU NEED SOME FUCKING FRESH AIR#!', 'woooow2','woooow3', 'niiice4', "LET'S FUCKING GO!"]
             },
             user: {
                 options: [
@@ -396,6 +400,42 @@ export const getData = () => ({
                     },
                     {
                         answer: 'I can very well deal with problems',
+                        value: 5
+                    },
+                ],
+                answer: {
+                    answer: '',
+                    value: null
+                }
+            }
+        },
+        duration: {
+            name: 'duration',
+            type: 'slider',
+            bot: {
+                prompts: ["Alright now I understand your mood", 'The last thing I need to know is, how much time do you have to spend?'],
+                responds: []
+            },
+            user: {
+                options: [
+                    {
+                        answer: "I only have a few moments",
+                        value: 1
+                    },
+                    {
+                        answer: "I've got at bit of time",
+                        value: 2
+                    },
+                    {
+                        answer: "I've got time",
+                        value: 3
+                    },
+                    {
+                        answer: 'I have plenty of time',
+                        value: 4
+                    },
+                    {
+                        answer: 'I have all the time in the world',
                         value: 5
                     },
                 ],
