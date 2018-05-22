@@ -105,20 +105,11 @@ class App extends Component {
         <ChatList
           chatListEntities={chatListEntities}
           displayActionArea={this.displayActionArea}
+          step={step}
+          updateStateValue={this.updateStateValue}
+          isActionAreaVisible={this.state.isActionAreaVisible}
+          displayActionArea={this.displayActionArea}
         />
-        {step !== 'suggestion' ?
-          chatListEntities.length &&
-          <ActionArea
-            entityType={chatListEntities[chatListEntities.length - 1]}
-            updateStateValue={this.updateStateValue}
-            shouldScroll={shouldScroll}
-            isActionAreaVisible={this.state.isActionAreaVisible}
-            displayActionArea={this.displayActionArea}
-          />
-          :
-          <Suggestion />
-
-        }
       </div>
     )
   }
