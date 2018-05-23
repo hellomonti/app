@@ -67,8 +67,8 @@ class Slider extends Component {
               snapPoints={[0, 1000, 2000, 3000, 4000]}
             />
             <img src='./assets/img/handle-curves.svg' className='below-slider' style={{ left: sliderState * 0.025 + '%' }} />
-            <Pits />
           </div>
+          <Pits />
         </div>
       </div>
     );
@@ -172,7 +172,6 @@ export const Battery = ({ sliderState }) => {
   )
 }
 
-
 export const ImageValue = ({ sliderName, sliderValue }) => {
   // console.log(`.assets/img/${sliderName}-${sliderValue}`);
   return (
@@ -181,7 +180,6 @@ export const ImageValue = ({ sliderName, sliderValue }) => {
     </div>
   )
 }
-
 
 // componentDidMount() {
 //   setTimeout(
