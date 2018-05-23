@@ -24,7 +24,7 @@ p {
   margin: 14px 24px 14px auto;
   padding: 10px 16px 9px 12px;
   background-color: #00e9ba;
-  box-shadow: 0 5px 10px 0 rgba(0, 233, 186, 0.32);
+  /* box-shadow: 0 5px 10px 0 rgba(0, 233, 186, 0.32); */
   border-radius: 20px 5px 5px 20px;
   animation: 0.3s ease-out 0s 1 userBubbleAnimation;
   color: #ffffff;
