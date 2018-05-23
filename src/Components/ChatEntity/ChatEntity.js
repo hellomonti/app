@@ -8,6 +8,7 @@ class ChatEntity extends Component {
 
     componentDidMount() {
       this.entityIsDone();
+      window.navigator.vibrate([100,30,100,30,100,200,200,30,200,30,200,200,100,30,100,30,100]);
     }
 
     entityIsDone = () => {
@@ -52,6 +53,7 @@ class ChatEntity extends Component {
                         sender='user'
                         first
                         scrollToBottom={this.props.scrollToBottom}
+                        image={entityType.type === 'slider' ? `./assets/img/${entityType.name}-${answer.value}.svg` : null}
                     >
                     </ChatBubble>
                 }
