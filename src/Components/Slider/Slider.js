@@ -48,7 +48,7 @@ class Slider extends Component {
     return (
       <div className='slider-block'>
         <div style={{ textAlign: 'center' }}>
-          <Button text={user.options[sliderValue].answer} returnValue={user.options[sliderValue].value} imageSource='./assets/img/icon-right.svg' onClick={this.updateValue} />
+          <Button text={user.options[sliderValue].answer} returnValue={user.options[sliderValue].value} imageSource='./assets/img/arrow-up.svg' onClick={this.updateValue} />
         </div>
         {
           sliderData.name === 'energy' ?

@@ -1,6 +1,6 @@
 .button {
   max-width: 80vw;
-  box-shadow: 0 5px 13px 0 rgba(0, 233, 186, 0.56);
+  /* box-shadow: 0 5px 13px 0 rgba(0, 233, 186, 0.56); */
   padding: 10px 20px;
   cursor: pointer;
   text-align: left;
@@ -8,12 +8,12 @@
   outline: 0;
   border-radius: 20px;
   margin: 0 auto;
-  background-color: #00e9ba;
+  background-color: white;
   font-family: Proxima Nova;
   font-size: 16px;
   font-weight: 500;
-  color: #ffffff;
-
+  color: #768c9a;
+  border: solid 1px #00e9ba;
   animation: 0.3s ease-out 0s 1 buttonShow;
 }
 
