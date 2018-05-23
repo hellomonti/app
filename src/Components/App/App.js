@@ -6,6 +6,7 @@ import ActionArea from '../ActionArea/ActionArea';
 import { getData } from '../../Data/dataStructure';
 import ChatList from '../ChatList/ChatList';
 import Suggestion from '../Suggestion/Suggestion';
+import axios from 'axios';
 
 class App extends Component {
 
@@ -23,6 +24,21 @@ class App extends Component {
       conversationIndex: 0,
       isActionAreaVisible: false
     })
+
+    const tokenStr = '6g91W1a98bREAv1nSzGw7J9aW2qvLGCl';
+    const webApiUrl = 'https://dev.api.healthcity.io/events';
+
+    axios.get(webApiUrl, {
+      headers: { "Authorization": `Bearer ${tokenStr}` }
+    }).then(response => {
+      console.log(response.data[response.data.length - 1]);
+      
+      // this.setState({
+      //   dataArray: response.data,
+      // });
+      // console.log(this.state.recentArray);
+      console.log('Data received!');
+    }).catch(error => console.log(error));
   }
 
   componentDidMount() {
@@ -31,6 +47,8 @@ class App extends Component {
     newChatListEntities.push(this.state.data.introConversation[this.state.currentStep]);
 
     this.setState({ chatListEntities: newChatListEntities });
+
+    window.navigator.vibrate([100,30,100,30,100,200,200,30,200,30,200,200,100,30,100,30,100]);
   }
 
   updateStateValue = (entityType) => {
