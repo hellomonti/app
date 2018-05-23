@@ -6,13 +6,23 @@ import Suggestion from '../Suggestion/Suggestion';
 
 class ChatList extends Component {
 
+    state = {
+        isActionAreaVisible: false
+    }
+
     componentDidUpdate() {
         this.scrollToBottom();
     }
 
+    displayActionArea = (value) => {
+        this.setState({
+          isActionAreaVisible: value
+        });
+      }
+
     scrollToBottom = () => {
         window.scrollBy({
-            top: 200,
+            top: 300,
             left: 0,
             behavior: 'smooth'
         });
@@ -20,7 +30,8 @@ class ChatList extends Component {
 
     render() {
         console.log(this.props);
-        const { chatListEntities, shouldScroll, step, updateStateValue, displayActionArea } = this.props;
+        const { chatListEntities, shouldScroll, step, updateStateValue } = this.props;
+        const { isActionAreaVisible } = this.state;
 
         return (
             <div id='chat-list'>
@@ -30,7 +41,7 @@ class ChatList extends Component {
                             key={entity.name}
                             entityType={entity}
                             scrollToBottom={this.scrollToBottom}
-                            displayActionArea={this.props.displayActionArea} />
+                            displayActionArea={this.displayActionArea} />
                     )
                 }
                 {step !== 'suggestion' ?
@@ -39,8 +50,8 @@ class ChatList extends Component {
                         entityType={chatListEntities[chatListEntities.length - 1]}
                         updateStateValue={updateStateValue}
                         shouldScroll={shouldScroll}
-                        isActionAreaVisible={true}
-                        displayActionArea={displayActionArea}
+                        isActionAreaVisible={isActionAreaVisible}
+                        displayActionArea={this.displayActionArea}
                     />
                     :
                     <Suggestion />

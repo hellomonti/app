@@ -10,17 +10,19 @@
     height: 43px;
     text-align: center;
     width: 100%;
-    background-color: #00e9ba;
+    /* background-color: #00e9ba; */
+    margin-bottom: 15px;
 }
 
 .slider-wrapper {
     margin: 0 auto;
-    width: 75%;
+    width: 100%;
     position: relative;
 }
 
 .rheostat {
     height: 30px;
+    width: 100%;
 }
 
 .below-slider {
@@ -93,7 +95,7 @@
     width: 170px;
     margin: 0 auto;
     padding-top: 22px;
-    padding-bottom: 37px;
+    padding-bottom: 24px;
 }
 
 .battery {
@@ -120,9 +122,15 @@
 .pits {
     position: absolute;
     width: 100%;
+    bottom: 5px;
 }
 
-.pit {
+.slider-groove {
+    display: block;
+    margin: 0 auto;
+}
+
+/* .pit {
     width: 3px;
     height: 6px;
     border-radius: 2px;
@@ -130,8 +138,8 @@
     display: inline-block;
     position: absolute;
     top: -10px;
-    /* z-index: -1; */
-}
+    z-index: -1;
+}  */
 
 @keyframes sliderShow {
   0% {

@@ -33,12 +33,6 @@ class App extends Component {
     this.setState({ chatListEntities: newChatListEntities });
   }
 
-  displayActionArea = (value) => {
-    this.setState({
-      isActionAreaVisible: value
-    });
-  }
-
   updateStateValue = (entityType) => {
     let newData = this.state.data;
     let value = entityType.user.answer.value;

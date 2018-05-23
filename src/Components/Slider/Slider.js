@@ -66,7 +66,7 @@ class Slider extends Component {
               snap
               snapPoints={[0, 1000, 2000, 3000, 4000]}
             />
-            <img src='./assets/img/handle-curve.svg' className='below-slider' style={{ left: sliderState * 0.025 + '%' }} />
+            <img src='./assets/img/handle-curves.svg' className='below-slider' style={{ left: sliderState * 0.025 + '%' }} />
             <Pits />
           </div>
         </div>
@@ -79,11 +79,7 @@ export default Slider;
 
 const Pits = () => (
   <div className='pits'>
-    <div style={{ left: 0 + '%' }} className='pit' />
-    <div style={{ left: 25 + '%' }} className='pit' />
-    <div style={{ left: 50 + '%' }} className='pit' />
-    <div style={{ left: 75 + '%' }} className='pit' />
-    <div style={{ left: 100 + '%' }} className='pit' />
+    <img className='slider-groove' src='./assets/img/slider-groove.svg' />
   </div>
 )
 
