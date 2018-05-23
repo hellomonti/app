@@ -5,7 +5,7 @@ p {
   font-family: Proxima Nova;
 }
 
-monti-container{
+.monti-container{
   width: 100%;
   display: block;
 }
@@ -45,9 +45,9 @@ monti-container{
   margin: 4px auto 4px 24px; /*Lav plads til Monti*/
   padding: 9px 12px 10px 16px;
   background-color: #ffffff;
-  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.05);
+  /* box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.05); */
   border-radius: 5px 20px 20px 5px;
-
+  border: solid 1px rgba(0, 0, 0, 0.1);
   animation: 0.3s ease-out 0s 1 montiBubbleAnimation;
 
   color: #262b3d;
