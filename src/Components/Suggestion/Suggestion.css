@@ -30,8 +30,8 @@
     width: 100%;
     padding-top: 13px;
     padding-left: 16px;
-    -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px);
+    /* -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px); */
 }
 
 
