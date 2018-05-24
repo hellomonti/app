@@ -157,42 +157,42 @@ export const getData = () => ({
     ],
 
     conversation: {
-        energy: {
-            name: 'energy',
-            type: 'slider',
-            bot: {
-                prompts: ['How much energy do you have to spare?'],
-                responds: ['YOU NEED SOME FUCKING FRESH AIR#!', 'woooow2','woooow3', 'niiice4', "LET'S FUCKING GO!"]
-            },
-            user: {
-                options: [
-                    {
-                        answer: "I don't feel energetic at all",
-                        value: 1
-                    },
-                    {
-                        answer: "I don't feel energetic",
-                        value: 2
-                    },
-                    {
-                        answer: 'I feel slightly energetic',
-                        value: 3
-                    },
-                    {
-                        answer: 'I feel energetic',
-                        value: 4
-                    },
-                    {
-                        answer: 'I feel very energetic',
-                        value: 5
-                    },
-                ],
-                answer: {
-                    answer: '',
-                    value: null
-                }
-            }
-        },
+        // energy: {
+        //     name: 'energy',
+        //     type: 'slider',
+        //     bot: {
+        //         prompts: ['How much energy do you have to spare?'],
+        //         responds: ['YOU NEED SOME FUCKING FRESH AIR#!', 'woooow2','woooow3', 'niiice4', "LET'S FUCKING GO!"]
+        //     },
+        //     user: {
+        //         options: [
+        //             {
+        //                 answer: "I don't feel energetic at all",
+        //                 value: 1
+        //             },
+        //             {
+        //                 answer: "I don't feel energetic",
+        //                 value: 2
+        //             },
+        //             {
+        //                 answer: 'I feel slightly energetic',
+        //                 value: 3
+        //             },
+        //             {
+        //                 answer: 'I feel energetic',
+        //                 value: 4
+        //             },
+        //             {
+        //                 answer: 'I feel very energetic',
+        //                 value: 5
+        //             },
+        //         ],
+        //         answer: {
+        //             answer: '',
+        //             value: null
+        //         }
+        //     }
+        // },
         relax: {
             name: 'relax',
             type: 'slider',
