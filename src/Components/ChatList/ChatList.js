@@ -3,7 +3,6 @@ import ChatEntity from '../ChatEntity/ChatEntity';
 import './ChatList.css';
 import ActionArea from '../ActionArea/ActionArea';
 import Suggestion from '../Suggestion/Suggestion';
-import Monti from '../Monti/Monti';
 
 class ChatList extends Component {
 
@@ -17,9 +16,9 @@ class ChatList extends Component {
 
     displayActionArea = (value) => {
         this.setState({
-            isActionAreaVisible: value
+          isActionAreaVisible: value
         });
-    }
+      }
 
     scrollToBottom = () => {
         window.scrollBy({
@@ -36,18 +35,16 @@ class ChatList extends Component {
 
         return (
             <div id='chat-list'>
-                <div style={{position: 'relative'}}>
-                    <Monti />
-                    {
-                        chatListEntities.map(entity =>
-                            <ChatEntity
-                                key={entity.name}
-                                entityType={entity}
-                                scrollToBottom={this.scrollToBottom}
-                                displayActionArea={this.displayActionArea} />
-                        )
-                    }
-                </div>
+                {
+                    chatListEntities.map((entity, i) =>
+                        <ChatEntity
+                            key={entity.name}
+                            entityType={entity}
+                            scrollToBottom={this.scrollToBottom}
+                            displayActionArea={this.displayActionArea} 
+                            isLast={chatListEntities.length === i + 1}/>
+                    )
+                }
                 {step !== 'suggestion' ?
                     chatListEntities.length &&
                     <ActionArea

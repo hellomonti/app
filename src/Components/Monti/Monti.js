@@ -2,11 +2,16 @@ import React, { Component } from 'react';
 import './Monti.css';
 
 class Monti extends Component {
+
+    state = {
+        show: true
+    }
+
     render() {
-        const { posY } = this.props;
+        const { posY, shouldDisappear } = this.props;
         console.log(posY)
         return (
-            <div style={{bottom: 0 + 'px'}} className='monti-avatar'>
+            <div style={{ bottom: posY + 'px' }} className='monti-avatar'>
                 <img src='./assets/img/monti.svg' alt='monti' />
             </div>
         );
