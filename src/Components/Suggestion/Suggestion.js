@@ -71,11 +71,11 @@ class Fab extends Component {
     render() {
         const { type, onClick } = this.props;
 
-        navigator.geolocation.getCurrentPosition(pos => {
-            let link = `http://maps.apple.com/?daddr=57.050988,9.922470&saddr=${pos.coords.latitude},${pos.coords.longitude}&dirflg=w`;
-            //console.log(link);
-            this.setState({ link });
-        });
+        // navigator.geolocation.getCurrentPosition(pos => {
+        //     let link = `http://maps.apple.com/?daddr=57.050988,9.922470&saddr=${pos.coords.latitude},${pos.coords.longitude}&dirflg=w`;
+        //     //console.log(link);
+        //     this.setState({ link });
+        // });
 
         return (
             <a href={this.state.link} className='fab'>
