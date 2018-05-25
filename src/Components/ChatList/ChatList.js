@@ -4,6 +4,7 @@ import './ChatList.css';
 import ActionArea from '../ActionArea/ActionArea';
 import Suggestion from '../Suggestion/Suggestion';
 import ChatBubble from '../ChatBubble/ChatBubble';
+import BreatheOrb from '../BreatheOrb/BreatheOrb';
 
 class ChatList extends Component {
 
@@ -83,6 +84,7 @@ class ChatList extends Component {
                             displayActionArea={this.displayActionArea} 
                             isLast={true}
                         />
+                        <BreatheOrb />
                     </div>
                 }
             </div>
