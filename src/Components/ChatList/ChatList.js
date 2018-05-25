@@ -3,6 +3,7 @@ import ChatEntity from '../ChatEntity/ChatEntity';
 import './ChatList.css';
 import ActionArea from '../ActionArea/ActionArea';
 import Suggestion from '../Suggestion/Suggestion';
+import ChatBubble from '../ChatBubble/ChatBubble';
 
 class ChatList extends Component {
 
@@ -22,7 +23,7 @@ class ChatList extends Component {
 
     scrollToBottom = () => {
         window.scrollBy({
-            top: 300,
+            top: 400,
             left: 0,
             behavior: 'smooth'
         });
@@ -33,6 +34,25 @@ class ChatList extends Component {
         const { chatListEntities, shouldScroll, step, updateStateValue } = this.props;
         const { isActionAreaVisible } = this.state;
 
+        const suggestionEntity = {
+            name: 'findAreas',
+            type: 'button',
+            bot: {
+                prompts: ["Alright, we are here now!",
+                          "Lets take some deep breaths together!"],
+                responds: null
+            },
+            user: {
+                options: [
+                    
+                ],
+                answer: {
+                    answer: null,
+                    value: null
+                }
+            }
+        }
+
         return (
             <div id='chat-list'>
                 {
@@ -42,7 +62,7 @@ class ChatList extends Component {
                             entityType={entity}
                             scrollToBottom={this.scrollToBottom}
                             displayActionArea={this.displayActionArea} 
-                            isLast={chatListEntities.length === i + 1}/>
+                            isLast={chatListEntities.length === i + 1 + (step === 'suggestion' ? 1 : 0)}/>
                     )
                 }
                 {step !== 'suggestion' ?
@@ -55,7 +75,15 @@ class ChatList extends Component {
                         displayActionArea={this.displayActionArea}
                     />
                     :
-                    <Suggestion />
+                    <div>
+                        <Suggestion />
+                        <ChatEntity
+                            entityType={suggestionEntity}
+                            scrollToBottom={this.scrollToBottom}
+                            displayActionArea={this.displayActionArea} 
+                            isLast={true}
+                        />
+                    </div>
                 }
             </div>
         );

@@ -11,10 +11,12 @@ class Suggestion extends Component {
 
     componentDidMount() {
         const elem = document.getElementById('card-wrapper');
-        elem.style.backgroundImage = "url('./assets/img/jomfruAneParken.jpg')";
+        elem.style.backgroundImage = "url('./assets/img/cass.jpg')";
+
+        // Jomfruaneparken 57.050988,9.922470
 
         navigator.geolocation.getCurrentPosition(pos => {
-            const link = encodeURI(`https://www.kontinemt.dk/distance?origins=${pos.coords.latitude},${pos.coords.longitude}&destinations=57.050988,9.922470`);
+            const link = encodeURI(`https://www.kontinemt.dk/distance?origins=${pos.coords.latitude},${pos.coords.longitude}&destinations=57.012530,9.991089`);
 
             axios.get(link).then(p =>
                 this.setState({
@@ -31,7 +33,7 @@ class Suggestion extends Component {
             <div id='card-wrapper'>
                 {/* <ImageBar names={['sun', 'flower', 'anchor']} /> */}
                 <div className='footer-background' />
-                <InfoFooter name='Jomfru Ane Parken' duration={duration.text} distance={distance.text} />
+                <InfoFooter name='Æblehaven Cassiopeia' duration={duration.text} distance={distance.text} />
                 <Fab onClick={this.sendToMaps} type='navigation' /> 
             </div>
         );
@@ -77,10 +79,11 @@ class Fab extends Component {
         //     this.setState({ link });
         // });
 
+        // this.state.link
         return (
-            <a href={this.state.link} className='fab'>
+            <div href='#' className='fab'>
                 <img style={{ transform: 'translate(16px, 15px)' }} src={`./assets/img/${type}.svg`} />
-            </a>
+            </div>
         )
     }
 }

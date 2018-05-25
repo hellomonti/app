@@ -9,7 +9,7 @@ class ChatEntity extends Component {
         showMonti: false
     }
 
-    delayTime = 1600;
+    delayTime = 1;
 
     componentDidMount() {
         this.delayedMonti();
