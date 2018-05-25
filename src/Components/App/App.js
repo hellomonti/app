@@ -31,13 +31,13 @@ class App extends Component {
     axios.get(webApiUrl, {
       headers: { "Authorization": `Bearer ${tokenStr}` }
     }).then(response => {
-      console.log(response.data[response.data.length - 1]);
-      
+      //console.log(response.data[response.data.length - 1]);
+
       // this.setState({
       //   dataArray: response.data,
       // });
       // console.log(this.state.recentArray);
-      console.log('Data received!');
+      //console.log('Data received!');
     }).catch(error => console.log(error));
   }
 
@@ -53,7 +53,9 @@ class App extends Component {
     let newData = this.state.data;
     let value = entityType.user.answer.value;
 
-    newData.conversation[entityType.name] = entityType;
+    if (entityType !== 'suggestion') {
+      newData.conversation[entityType.name] = entityType;
+    }
 
     if (entityType.type === 'button') {
       this.setState({
@@ -71,28 +73,31 @@ class App extends Component {
 
     const conversationKeys = this.getConversationKeys();
 
-    if (this.state.step === 'introduction') {
-      if (!(entityType.user.options[value - 1].next === 'goToConversation')) {
-        newChatListEntities.push(this.state.data.introConversation[entityType.user.options[value - 1].next]);
-      } else {
-        newChatListEntities.push(this.state.data.conversation[conversationKeys[this.state.conversationIndex]])
-        this.setState({ currentStep: this.state.conversationIndex });
-        this.setState({ step: 'conversation' });
-        this.changeStep(conversationKeys);
+    if (this.state.step !== 'suggestion') {
+      if (this.state.step === 'introduction') {
+        if (!(entityType.user.options[value - 1].next === 'goToConversation')) {
+          newChatListEntities.push(this.state.data.introConversation[entityType.user.options[value - 1].next]);
+        } else {
+          newChatListEntities.push(this.state.data.conversation[conversationKeys[this.state.conversationIndex]])
+          this.setState({ currentStep: this.state.conversationIndex });
+          this.setState({ step: 'conversation' });
+          this.changeStep(conversationKeys);
+        }
       }
-    }
-    if (this.state.step === 'conversation') {
-      this.changeStep(conversationKeys);
-      newChatListEntities.push(this.state.data.conversation[conversationKeys[this.state.conversationIndex]]);
+      if (this.state.step === 'conversation') {
+        this.changeStep(conversationKeys);
+        newChatListEntities.push(this.state.data.conversation[conversationKeys[this.state.conversationIndex]]);
 
-      if (newChatListEntities.length === conversationKeys.length + 1) {
-        this.setState({
-          step: 'suggestion'
-        })
+        if (newChatListEntities.length === conversationKeys.length + 1) {
+          this.setState({
+            step: 'suggestion'
+          })
+        }
       }
     }
 
     this.setState({ chatListEntities: newChatListEntities });
+
   }
 
   changeStep = (conversationKeys) => {
@@ -109,6 +114,14 @@ class App extends Component {
   render() {
     const { data, currentStep, chatListEntities, shouldScroll, step } = this.state;
     const { conversation, introConversation } = data;
+
+    if(chatListEntities.length > 1) {
+      if(chatListEntities[chatListEntities.length - 1].name === 'start') {
+        chatListEntities.pop()
+      }
+    }
+
+    // console.log(chatListEntities)
 
     return (
       <div>

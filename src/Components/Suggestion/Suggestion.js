@@ -73,7 +73,7 @@ class Fab extends Component {
 
         navigator.geolocation.getCurrentPosition(pos => {
             let link = `http://maps.apple.com/?daddr=57.050988,9.922470&saddr=${pos.coords.latitude},${pos.coords.longitude}&dirflg=w`;
-            console.log(link);
+            //console.log(link);
             this.setState({ link });
         });
 

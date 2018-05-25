@@ -9,7 +9,7 @@ class ChatEntity extends Component {
         showMonti: false
     }
 
-    delayTime = 1600;
+    delayTime = 1;
 
     componentDidMount() {
         this.delayedMonti();
@@ -20,7 +20,7 @@ class ChatEntity extends Component {
     entityIsDone = () => {
         let waitTime = this.props.entityType.bot.prompts.length * this.delayTime + this.delayTime;
 
-        console.log(this.props);
+        //console.log(this.props);
 
         setTimeout(() => {
             this.props.displayActionArea(true)
@@ -36,7 +36,7 @@ class ChatEntity extends Component {
         );
 
     componentWillReceiveProps(next) {
-        console.log(next.isLast)
+        //console.log(next.isLast)
         if (!next.isLast) {
             setTimeout(
                 () => this.setState({

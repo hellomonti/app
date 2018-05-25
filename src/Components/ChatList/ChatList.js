@@ -29,7 +29,7 @@ class ChatList extends Component {
     }
 
     render() {
-        console.log(this.props);
+        // console.log(this.props);
         const { chatListEntities, shouldScroll, step, updateStateValue } = this.props;
         const { isActionAreaVisible } = this.state;
 

@@ -9,7 +9,7 @@ class Monti extends Component {
 
     render() {
         const { posY, shouldDisappear } = this.props;
-        console.log(posY)
+        //console.log(posY)
         return (
             <div style={{ bottom: posY + 'px' }} className='monti-avatar'>
                 <img src='./assets/img/monti.svg' alt='monti' />

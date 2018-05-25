@@ -6,7 +6,7 @@
   text-align: left;
   border: 0;
   outline: 0;
-  border-radius: 20px;
+  border-radius: 100px;
   margin: 0 auto;
   background-color: white;
   font-family: Proxima Nova;
@@ -24,9 +24,9 @@
 }
 
 .icon {
-  width: 24px;
-  height: 24px;
-  margin: -3px -14px -10px 10px;
+  width: 20px;
+  height: 20px;
+  margin: -2px -11px -10px 10px;
   object-fit: contain;
   float: right;
 }
