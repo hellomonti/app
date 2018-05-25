@@ -39,7 +39,8 @@ class ChatList extends Component {
             name: 'findAreas',
             type: 'button',
             bot: {
-                prompts: ["Alright, we are here now!",
+                prompts: ["Nice to see you. Hope you had a good walk!",
+                          "The air here is super clean! I just measured the CO level, and its on of the lowest ive ever seen in Aalborg",
                           "Lets take some deep breaths together!"],
                 responds: null
             },
