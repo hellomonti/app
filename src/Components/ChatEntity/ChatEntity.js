@@ -85,7 +85,7 @@ class ChatEntity extends Component {
                         sender='user'
                         first
                         scrollToBottom={this.props.scrollToBottom}
-                        image={entityType.type === 'slider' ? `./assets/img/${entityType.name}-${answer.value}.svg` : null}
+                        image={entityType.type === 'slider' ? `./assets/img/${entityType.name}-${answer.value + 1}.svg` : null}
                     >
                     </ChatBubble>
                 }
