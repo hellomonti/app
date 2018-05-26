@@ -2,8 +2,10 @@
     height: 52px;
     background-color: #ffffff;
     box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 4px 5px 0 rgba(0, 0, 0, 0.14);
-    position: relative;
+    position: fixed;
+    top: 0px;
     width: 100%;
+    z-index: 10000;
 }
 
 .monti-logo {
