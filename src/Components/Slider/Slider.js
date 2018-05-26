@@ -66,7 +66,7 @@ class Slider extends Component {
               snap
               snapPoints={[0, 1000, 2000, 3000, 4000]}
             />
-            <img src='./assets/img/handle-curves.svg' className='below-slider' style={{ left: sliderState * 0.025 + '%' }} />
+            <img src='./assets/img/handle.svg' className='below-slider' style={{ left: sliderState * 0.025 + '%' }} />
           </div>
           <Pits />
         </div>
