@@ -6,6 +6,7 @@ import ActionArea from '../ActionArea/ActionArea';
 import { getData } from '../../Data/dataStructure';
 import ChatList from '../ChatList/ChatList';
 import Suggestion from '../Suggestion/Suggestion';
+import AppBar from '../AppBar/AppBar';
 import axios from 'axios';
 
 class App extends Component {
@@ -125,6 +126,7 @@ class App extends Component {
 
     return (
       <div>
+        <AppBar />
         <ChatList
           chatListEntities={chatListEntities}
           displayActionArea={this.displayActionArea}
