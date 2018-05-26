@@ -37,10 +37,10 @@ class ChatBubble extends Component {
     return (
       !this.state.isHidden &&
       <div className={container}>
-        {image && <img src={image} className='slider-image' />}
         <div className={bubbleClass}>
           <p>{chatbubbleContent}</p>
         </div>
+        {image && <img src={image} className='slider-image' />}
       </div >
     );
   }

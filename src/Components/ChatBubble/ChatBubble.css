@@ -26,6 +26,7 @@ p {
   background-color: #00e9ba;
   /* box-shadow: 0 5px 10px 0 rgba(0, 233, 186, 0.32); */
   border-radius: 20px 5px 5px 20px;
+  transform-origin: bottom right;
   animation: 0.3s ease-out 0s 1 userBubbleAnimation;
   color: #ffffff;
 }
@@ -48,16 +49,18 @@ p {
   /* box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.05); */
   border-radius: 5px 20px 20px 5px;
   border: solid 1px rgba(0, 0, 0, 0.1);
+  transform-origin: bottom left;
   animation: 0.3s ease-out 0s 1 montiBubbleAnimation;
 
   color: #262b3d;
 }
 
-.monti-first{
-  border-radius: 20px 20px 20px 5px;
-}
 .monti-last{
   border-radius: 5px 20px 20px 20px;
+}
+
+.monti-first{
+  border-radius: 20px 20px 20px 5px;
 }
 
 .hidden {
@@ -66,7 +69,8 @@ p {
 
 .slider-image {
   display: block;
-  margin: 14px 10px -4px auto;
+  margin: 2px 10px 14px auto;
+  transform-origin: bottom right;
   animation: 0.3s ease-out 0s 1 montiBubbleAnimation;
 }
 
