@@ -15,16 +15,19 @@ export const getData = () => ({
                         answer: 'How can you find areas?',
                         value: 1,
                         next: "findAreas",
+                        primary: false
                     },
                     {
                         answer: 'How do you match areas with my state of mind?',
                         value: 2,
                         next: "howDoYouMatch",
+                        primary: false
                     },
                     {
                         answer: 'Lets do this!',
                         value: 3,
                         next: "readyToBegin", 
+                        primary: true
                     }
                 ],
                 answer: {

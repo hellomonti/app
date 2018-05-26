@@ -88,12 +88,12 @@ p {
 
 @keyframes montiBubbleAnimation {
   0% {
-    transform: translateX(-30%) scale(0.1);
+    transform: scale(0.1);
   }
   90% {
     transform: scale(1.05);
   }
   100% {
-    transform: translateX(0) scale(1);
+    transform: scale(1);
   }
 }

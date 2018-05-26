@@ -24,7 +24,7 @@ class ActionArea extends Component {
                     entityType.user.options.map(option =>
                       this.props.isActionAreaVisible &&
                         <div key={option.answer} style={{ textAlign: 'center', marginBottom: '10px' }}>
-                            <Button text={option.answer} returnValue={option.value} onClick={this.updateValue} />
+                            <Button text={option.answer} primary={option.primary} returnValue={option.value} onClick={this.updateValue} />
                         </div>
                     )
                     :
