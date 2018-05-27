@@ -201,7 +201,7 @@ export const getData = () => ({
             type: 'slider',
             bot: {
                 prompts: ['How relaxed do you feel?'],
-                responds: ['Okay, but let me know...']
+                responds: ["It's good to think about that sometimes."]
             },
             user: {
                 options: [
@@ -237,7 +237,7 @@ export const getData = () => ({
             type: 'slider',
             bot: {
                 prompts: ['How clear are your thoughts right now?'],
-                responds: ['Then tell me:']
+                responds: ["Hmm. That's interesting!"]
             },
             user: {
                 options: [
