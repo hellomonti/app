@@ -273,7 +273,7 @@ export const getData = () => ({
             type: 'slider',
             bot: {
                 prompts: ['How confident do you feel?'],
-                responds: []
+                responds: ["We are getting closer."]
             },
             user: {
                 options: [
@@ -309,7 +309,7 @@ export const getData = () => ({
             type: 'slider',
             bot: {
                 prompts: ['How interested are you in socialising?'],
-                responds: []
+                responds: ["I know that feeling."]
             },
             user: {
                 options: [
@@ -345,7 +345,7 @@ export const getData = () => ({
             type: 'slider',
             bot: {
                 prompts: ['How useful do you feel?'],
-                responds: []
+                responds: ["That's a bit robotic, isn't it?🤖"]
             },
             user: {
                 options: [
@@ -381,7 +381,7 @@ export const getData = () => ({
             type: 'slider',
             bot: {
                 prompts: ['How well do you deal with problems?'],
-                responds: []
+                responds: ["Well, you're doing great right now."]
             },
             user: {
                 options: [
@@ -416,7 +416,7 @@ export const getData = () => ({
             name: 'duration',
             type: 'slider',
             bot: {
-                prompts: ["Alright now I understand your mood", 'The last thing I need to know is, how much time do you have to spend?'],
+                prompts: ["...","Alright, now I understand your mood", 'The last thing I need to know is, how much time do you have to spend?'],
                 responds: []
             },
             user: {
