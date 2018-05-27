@@ -116,7 +116,7 @@ export const getData = () => ({
             type: 'button',
             bot: {
                 prompts: ["It's a state of mind, where you are able to relax, be creative", "…", "Well, a feeling of contentment and comfort. 😌"],
-                responds: ["Okay, I'm gonna ask you a few questions", "When you answer think of how you feel right now 💖"]
+                responds: []
             },
             user: {
                 options: [
