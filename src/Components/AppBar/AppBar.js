@@ -2,10 +2,21 @@ import React, { Component } from 'react';
 import './AppBar.css';
 
 class AppBar extends Component {
+    writeToLocalstorage = () => {
+        localStorage.setItem(
+            'isVisited',
+            JSON.stringify(
+                {
+                    visited: true
+                }
+            )
+        )
+    }
+
     render() {
         return (
             <div className='app-bar'>
-                <img className='monti-logo' src='./assets/img/monti-logo.svg' />
+                <img onClick={this.writeToLocalstorage} className='monti-logo' src='./assets/img/monti-logo.svg' />
             </div>
         );
     }

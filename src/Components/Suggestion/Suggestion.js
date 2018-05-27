@@ -219,19 +219,6 @@ class Suggestion extends Component {
                         </div>
                     </div>
                 }
-
-                {showExperience &&
-                    <div>
-                        <ChatEntity
-                            entityType={suggestionEntity}
-                            scrollToBottom={this.scrollToBottom}
-                            displayActionArea={() => { }}
-                            isLast={true}
-                        />
-                        <div style={{ height: '15px' }} />
-                        <BreatheOrb />
-                    </div>
-                }
             </div>
         );
     }
@@ -275,12 +262,23 @@ class Fab extends Component {
         });
     }
 
+    writeToLocalstorage = () => {
+        localStorage.setItem(
+            'isVisited',
+            JSON.stringify(
+                {
+                    visited: true
+                }
+            )
+        )
+    }
+
     render() {
         const { type, onClick, children } = this.props;
 
         // this.state.link
         return (
-            <a style={{height: '40px'}} href={this.state.link} >
+            <a onClick={this.writeToLocalstorage} style={{ height: '40px' }} href={this.state.link} >
                 {children}
             </a>
         )

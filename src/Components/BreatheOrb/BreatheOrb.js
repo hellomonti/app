@@ -48,10 +48,16 @@ class BreatheOrb extends Component {
 
 
   render() {
+    let className = 'orb';
+
+    if (this.props.started) {
+      className += ' orb_1';
+    }
+
     return (
       this.state.isVisible &&
       <div className='outerorb'>
-        <div className='orb orb_1'>
+        <div className={className}>
           {/* {this.state.orbtext} */}
         </div>
       </div>

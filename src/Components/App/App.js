@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import './App.css';
 import Slider from '../Slider/Slider';
-import ChatEntity from '../ChatEntity/ChatEntity';
 import ActionArea from '../ActionArea/ActionArea';
 import { getData } from '../../Data/dataStructure';
 import ChatList from '../ChatList/ChatList';
 import Suggestion from '../Suggestion/Suggestion';
 import AppBar from '../AppBar/AppBar';
+
 import axios from 'axios';
+import Experience from '../Experience/Experience';
 
 class App extends Component {
 
@@ -23,7 +24,8 @@ class App extends Component {
       shouldScroll: false,
       step: 'introduction',
       conversationIndex: 0,
-      isActionAreaVisible: false
+      isActionAreaVisible: false,
+      beenVisited: false
     })
 
     const tokenStr = '6g91W1a98bREAv1nSzGw7J9aW2qvLGCl';
@@ -48,6 +50,12 @@ class App extends Component {
     newChatListEntities.push(this.state.data.introConversation[this.state.currentStep]);
 
     this.setState({ chatListEntities: newChatListEntities });
+
+    if (localStorage.getItem('isVisited')) {
+      this.setState({
+        beenVisited: JSON.parse(localStorage.getItem('isVisited'))
+      })
+    }
   }
 
   updateStateValue = (entityType) => {
@@ -116,18 +124,20 @@ class App extends Component {
     const { data, currentStep, chatListEntities, shouldScroll, step } = this.state;
     const { conversation, introConversation } = data;
 
-    if(chatListEntities.length > 1) {
-      if(chatListEntities[chatListEntities.length - 1].name === 'start') {
+    if (chatListEntities.length > 1) {
+      if (chatListEntities[chatListEntities.length - 1].name === 'start') {
         chatListEntities.pop()
       }
     }
+
+
 
     // console.log(chatListEntities)
 
     return (
       <div>
         <AppBar />
-        <ChatList
+        {!this.state.beenVisited ? <ChatList
           chatListEntities={chatListEntities}
           displayActionArea={this.displayActionArea}
           step={step}
@@ -135,6 +145,9 @@ class App extends Component {
           isActionAreaVisible={this.state.isActionAreaVisible}
           displayActionArea={this.displayActionArea}
         />
+          :
+          <Experience />
+        }
       </div>
     )
   }
