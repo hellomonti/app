@@ -5,14 +5,14 @@ export const getData = () => ({
             type: 'button',
             bot: {
                 prompts: ["Hello, i'm Monti 👋",
-                          "I can help you find areas in the city that matches your state of mind.",
+                          "I can help you find nice areas in the city to match your state of mind.",
                           "Shall we begin?"],
                 responds: null
             },
             user: {
                 options: [
                     {
-                        answer: 'How can you find areas?',
+                        answer: 'How can you find nice areas?',
                         value: 1,
                         next: "findAreas",
                         primary: false
@@ -40,7 +40,7 @@ export const getData = () => ({
             name: 'findAreas',
             type: 'button',
             bot: {
-                prompts: ["I can hear 👂, smell 👃 and see 👀 things in the city that people can't perceive.",
+                prompts: ["I can hear 👂, smell 👃 and see 👀 things in the city that people can't normally perceive.",
                           "Me and my other friends collect this knowledge all the time.",
                           "And we can use this information to find suitable locations that cater for your mood."],
                 responds: null
@@ -115,7 +115,7 @@ export const getData = () => ({
             name: 'solitude',
             type: 'button',
             bot: {
-                prompts: [  "It's a state of mind, where you are able to relax, be creative",
+                prompts: [  "Solitude is a state of mind, where you are able to relax, be creative",
                             "…",
                             "Well, a feeling of contentment and comfort. 😌"],
                 responds: []
@@ -277,7 +277,7 @@ export const getData = () => ({
             type: 'slider',
             bot: {
                 prompts: ['How confident do you feel?'],
-                responds: ["We are getting closer."]
+                responds: ["We are getting closer. Just a few more questions"]
             },
             user: {
                 options: [
