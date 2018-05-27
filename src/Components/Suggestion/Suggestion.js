@@ -14,7 +14,8 @@ class Suggestion extends Component {
         showExperience: false,
         showBreathingOrb: false,
         getDirections: false,
-        suggestion: null
+        suggestion: null,
+        navButton: false
     }
 
     componentDidMount() {
@@ -67,6 +68,14 @@ class Suggestion extends Component {
                 () => {
                     this.setState({ getDirections: true });
                     this.scrollToBottom();
+                    setTimeout(
+                        () => {
+                            this.setState({
+                                navButton: true
+                            })
+                            this.scrollToBottom();
+                        }, 3200
+                    )
                 },
                 1600
             )
@@ -86,7 +95,7 @@ class Suggestion extends Component {
 
 
     render() {
-        const { duration, distance, showSuggestion, showExperience, getDirections, suggestion } = this.state;
+        const { duration, distance, showSuggestion, showExperience, getDirections, suggestion, navButton } = this.state;
 
         const suggestionData = {
             name: 'findAreas',
@@ -213,7 +222,7 @@ class Suggestion extends Component {
                             isLast={true}
                             hideMonti={false}
                         />
-                        <div className='button-row' >
+                        {navButton && <div className='button-row' >
                             <div style={{ height: '15px' }} />
                             <Fab yCoord={suggestion.yCoord} xCoord={suggestion.xCoord}>
                                 <Button
@@ -224,7 +233,8 @@ class Suggestion extends Component {
                                     primary={true}
                                 />
                             </Fab>
-                        </div>
+
+                        </div>}
                     </div>
                 }
             </div>
@@ -263,7 +273,7 @@ class Fab extends Component {
     }
 
     componentDidMount() {
-        const { xCoord, yCoord} = this.props;
+        const { xCoord, yCoord } = this.props;
         navigator.geolocation.getCurrentPosition(pos => {
             let link = `http://maps.apple.com/?daddr=${xCoord},${yCoord}&saddr=${pos.coords.latitude},${pos.coords.longitude}&dirflg=w`;
             //console.log(link);
