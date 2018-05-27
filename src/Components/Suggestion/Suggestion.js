@@ -13,15 +13,23 @@ class Suggestion extends Component {
         showSuggestion: false,
         showExperience: false,
         showBreathingOrb: false,
-        getDirections: false
+        getDirections: false,
+        suggestion: null
     }
 
     componentDidMount() {
 
+        const { suggestions, finalScore } = this.props;
         // Jomfruaneparken 57.050988,9.922470
 
+        const suggestion = finalScore < 2.5 ? suggestions[0] : suggestions[1];
+
+        this.setState({
+            suggestion
+        })
+
         navigator.geolocation.getCurrentPosition(pos => {
-            const link = encodeURI(`https://www.kontinemt.dk/distance?origins=${pos.coords.latitude},${pos.coords.longitude}&destinations=57.012530,9.991089`);
+            const link = encodeURI(`https://www.kontinemt.dk/distance?origins=${pos.coords.latitude},${pos.coords.longitude}&destinations=${suggestion.xCoord},${suggestion.yCoord}`);
 
             axios.get(link).then(p =>
                 this.setState({
@@ -37,7 +45,7 @@ class Suggestion extends Component {
                     showSuggestion: true
                 });
                 const elem = document.getElementById('card-wrapper');
-                elem.style.backgroundImage = "url('./assets/img/cass.jpg')";
+                elem.style.backgroundImage = `url('${suggestion.image}')`;
                 this.scrollToBottom();
             },
             4800
@@ -78,7 +86,7 @@ class Suggestion extends Component {
 
 
     render() {
-        const { duration, distance, showSuggestion, showExperience, getDirections } = this.state;
+        const { duration, distance, showSuggestion, showExperience, getDirections, suggestion } = this.state;
 
         const suggestionData = {
             name: 'findAreas',
@@ -173,7 +181,7 @@ class Suggestion extends Component {
                         <div id='card-wrapper'>
                             {/* <ImageBar names={['sun', 'flower', 'anchor']} /> */}
                             <div className='footer-background' />
-                            <InfoFooter name='Æblehaven Cassiopeia' duration={duration.text} distance={distance.text} />
+                            <InfoFooter name={suggestion.name} duration={duration.text} distance={distance.text} />
                             <Fab onClick={this.sendToMaps} type='navigation' />
                         </div>
                         {!getDirections &&
@@ -207,7 +215,7 @@ class Suggestion extends Component {
                         />
                         <div className='button-row' >
                             <div style={{ height: '15px' }} />
-                            <Fab>
+                            <Fab yCoord={suggestion.yCoord} xCoord={suggestion.xCoord}>
                                 <Button
                                     text='Show me the way!'
                                     returnValue={'navigation'}
@@ -255,8 +263,9 @@ class Fab extends Component {
     }
 
     componentDidMount() {
+        const { xCoord, yCoord} = this.props;
         navigator.geolocation.getCurrentPosition(pos => {
-            let link = `http://maps.apple.com/?daddr=57.050988,9.922470&saddr=${pos.coords.latitude},${pos.coords.longitude}&dirflg=w`;
+            let link = `http://maps.apple.com/?daddr=${xCoord},${yCoord}&saddr=${pos.coords.latitude},${pos.coords.longitude}&dirflg=w`;
             //console.log(link);
             this.setState({ link });
         });

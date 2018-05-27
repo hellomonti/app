@@ -124,7 +124,7 @@ class App extends Component {
 
   render() {
     const { data, currentStep, chatListEntities, shouldScroll, step } = this.state;
-    const { conversation, introConversation } = data;
+    const { conversation, introConversation, suggestions } = data;
 
     if (chatListEntities.length > 1) {
       if (chatListEntities[chatListEntities.length - 1].name === 'start') {
@@ -132,7 +132,20 @@ class App extends Component {
       }
     }
 
+    // console.log(chatListEntities.filter(p =>  p === 'slider'));
 
+    const sliderArr = chatListEntities.filter(p => p.type === 'slider')
+    let score = 0;
+
+    if(sliderArr.length) {
+      sliderArr.forEach(e => {
+        score += e.user.answer.value
+      });
+
+      console.log(score);
+    }
+    
+    let finalScore = score / 7;
 
     // console.log(chatListEntities)
 
@@ -146,6 +159,8 @@ class App extends Component {
           updateStateValue={this.updateStateValue}
           isActionAreaVisible={this.state.isActionAreaVisible}
           displayActionArea={this.displayActionArea}
+          finalScore={finalScore}
+          suggestions={suggestions}
         />
           :
           <Experience />

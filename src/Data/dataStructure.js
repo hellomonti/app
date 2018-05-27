@@ -463,5 +463,20 @@ export const getData = () => ({
                 }
             ]
         }
+    ],
+
+    suggestions: [
+        {
+            name: 'Æblehaven Cassiopeia',
+            xCoord: '57.012530',
+            yCoord: '9.991089',
+            image: './assets/img/cass.jpg'
+        },
+        {
+            name: 'Gårdhaven Cassiopeia',
+            xCoord: '57.012173',
+            yCoord: '9.991276',
+            image: './assets/img/cass-2.jpg'
+        }
     ]
 })

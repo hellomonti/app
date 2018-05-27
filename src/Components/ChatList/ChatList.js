@@ -32,7 +32,7 @@ class ChatList extends Component {
 
     render() {
         // console.log(this.props);
-        const { chatListEntities, shouldScroll, step, updateStateValue } = this.props;
+        const { chatListEntities, shouldScroll, step, updateStateValue, finalScore, suggestions } = this.props;
         const { isActionAreaVisible } = this.state;
 
         return (
@@ -58,8 +58,7 @@ class ChatList extends Component {
                     />
                     :
                     <div>
-                        <Suggestion />
-
+                        <Suggestion finalScore={finalScore} suggestions={suggestions} />
                     </div>
                 }
             </div>
