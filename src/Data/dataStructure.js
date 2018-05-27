@@ -136,7 +136,7 @@ export const getData = () => ({
             name: 'readyToBegin',
             type: 'button',
             bot: {
-                prompts: ["Okay, I'm gonna ask you a few questions", "When you answer think of how you feel right now 💖"],
+                prompts: ["Okay, I'm gonna ask you a few questions", "What you answer will stay between us", "When you answer think of how you feel right now 💖"],
                 responds: null
             },
             user: {
