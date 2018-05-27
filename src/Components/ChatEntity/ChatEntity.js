@@ -9,7 +9,7 @@ class ChatEntity extends Component {
         showMonti: false
     }
 
-    delayTime = 1600;
+    delayTime = 1;
 
     componentDidMount() {
         this.delayedMonti();
@@ -48,7 +48,7 @@ class ChatEntity extends Component {
     }
 
     render() {
-        const { entityType, isLast } = this.props;
+        const { entityType, isLast, hideMonti } = this.props;
         const { showMonti } = this.state;
 
         const answer = entityType.user.answer;
@@ -69,7 +69,7 @@ class ChatEntity extends Component {
                             scrollToBottom={this.props.scrollToBottom}
                         />
                     )}
-                    {showMonti && <Monti posY={0} shouldDisappear={!isLast} />}
+                    {showMonti && !hideMonti && <Monti posY={0} shouldDisappear={!isLast} />}
                 </div>
             </div>
 
@@ -92,7 +92,7 @@ class ChatEntity extends Component {
                 {
                     answer.answer && responds && responds.length > 0 &&
                     <ChatBubble
-                        chatbubbleContent={responds[answer.value]}
+                        chatbubbleContent={responds}
                         sender='monti'
                         first
                         wait={this.delayTime / 2}

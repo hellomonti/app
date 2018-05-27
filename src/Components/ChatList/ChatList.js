@@ -35,26 +35,6 @@ class ChatList extends Component {
         const { chatListEntities, shouldScroll, step, updateStateValue } = this.props;
         const { isActionAreaVisible } = this.state;
 
-        const suggestionEntity = {
-            name: 'findAreas',
-            type: 'button',
-            bot: {
-                prompts: ["Nice to see you. Hope you had a good walk!",
-                          "The air here is super clean! I just measured the CO level, and its one of the lowest i've ever seen in Aalborg",
-                          "Lets take some deep breaths together!"],
-                responds: null
-            },
-            user: {
-                options: [
-                    
-                ],
-                answer: {
-                    answer: null,
-                    value: null
-                }
-            }
-        }
-
         return (
             <div id='chat-list'>
                 {
@@ -79,13 +59,7 @@ class ChatList extends Component {
                     :
                     <div>
                         <Suggestion />
-                        <ChatEntity
-                            entityType={suggestionEntity}
-                            scrollToBottom={this.scrollToBottom}
-                            displayActionArea={this.displayActionArea} 
-                            isLast={true}
-                        />
-                        <BreatheOrb />
+
                     </div>
                 }
             </div>

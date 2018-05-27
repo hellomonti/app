@@ -24,7 +24,7 @@ class Button extends Component {
     }
 
     return (
-      <div>
+      <div style={{display: 'inline-block'}}>
         <button className={className} onClick={this.handleClick}> {this.props.text}
         <img src={this.props.imageSource} className= { imageClass }></img>
         </button>
