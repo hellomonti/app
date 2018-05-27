@@ -237,7 +237,7 @@ export const getData = () => ({
             type: 'slider',
             bot: {
                 prompts: ['How clear are your thoughts right now?'],
-                responds: ['Then tell me:']
+                responds: ['Then tell me']
             },
             user: {
                 options: [
@@ -273,7 +273,7 @@ export const getData = () => ({
             type: 'slider',
             bot: {
                 prompts: ['How confident do you feel?'],
-                responds: []
+                responds: ['Hmm, can you also tell me ']
             },
             user: {
                 options: [
@@ -309,7 +309,7 @@ export const getData = () => ({
             type: 'slider',
             bot: {
                 prompts: ['How interested are you in socialising?'],
-                responds: []
+                responds: ['We are getting closer, but can you tell me']
             },
             user: {
                 options: [
@@ -345,7 +345,7 @@ export const getData = () => ({
             type: 'slider',
             bot: {
                 prompts: ['How useful do you feel?'],
-                responds: []
+                responds: ['But I also need to know ...']
             },
             user: {
                 options: [
@@ -381,7 +381,7 @@ export const getData = () => ({
             type: 'slider',
             bot: {
                 prompts: ['How well do you deal with problems?'],
-                responds: []
+                responds: ['']
             },
             user: {
                 options: [
