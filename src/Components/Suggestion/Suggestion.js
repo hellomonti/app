@@ -101,9 +101,11 @@ class Suggestion extends Component {
             name: 'findAreas',
             type: 'button',
             bot: {
-                prompts: ["Alright, I will ask my friends to look for a nice place for you. 👀",
+                prompts: ["Let me check with my friends - we will look for a nice place for you. 👀",
+                    "...",
+                    "...",
                     "I found just the right place for you! 🤩",
-                    "A quiet and bright area like this can help you feel calm and relaxed."],
+                    "A quiet, clean and bright area like this can help you feel calm and relaxed."],
                 responds: null
             },
             user: {
@@ -160,7 +162,7 @@ class Suggestion extends Component {
             type: 'button',
             bot: {
                 prompts: [
-                    'Now you can get directions for the area.',
+                    'Here are the directions for the area.',
                     'Just come back to me when you get there!'
                 ],
                 responds: null
