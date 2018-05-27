@@ -1,28 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="69px" height="70px" viewBox="0 0 69 70" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="56px" height="56px" viewBox="0 0 56 56" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: sketchtool 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
-    <title>9537A2EA-919A-47DF-B8A6-AA20FE860496</title>
+    <title>8BED2361-BE7F-4108-9EED-5FDC3AEF3C26</title>
     <desc>Created with sketchtool.</desc>
     <defs>
         <rect id="path-1" x="0" y="0" width="56" height="56" rx="28"></rect>
-        <filter x="-25.0%" y="-17.9%" width="150.0%" height="153.6%" filterUnits="objectBoundingBox" id="filter-3">
-            <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
-            <feGaussianBlur stdDeviation="3.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
-            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.2 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
-            <feMorphology radius="1.5" operator="erode" in="SourceAlpha" result="shadowSpreadOuter2"></feMorphology>
-            <feOffset dx="0" dy="4" in="shadowSpreadOuter2" result="shadowOffsetOuter2"></feOffset>
-            <feGaussianBlur stdDeviation="0.5" in="shadowOffsetOuter2" result="shadowBlurOuter2"></feGaussianBlur>
-            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.12 0" type="matrix" in="shadowBlurOuter2" result="shadowMatrixOuter2"></feColorMatrix>
-            <feOffset dx="0" dy="3" in="SourceAlpha" result="shadowOffsetOuter3"></feOffset>
-            <feGaussianBlur stdDeviation="1.5" in="shadowOffsetOuter3" result="shadowBlurOuter3"></feGaussianBlur>
-            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.14 0" type="matrix" in="shadowBlurOuter3" result="shadowMatrixOuter3"></feColorMatrix>
-            <feMerge>
-                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
-                <feMergeNode in="shadowMatrixOuter2"></feMergeNode>
-                <feMergeNode in="shadowMatrixOuter3"></feMergeNode>
-            </feMerge>
-        </filter>
-        <filter x="-19.6%" y="-12.5%" width="139.3%" height="142.9%" filterUnits="objectBoundingBox" id="filter-4">
+        <filter x="-1.8%" y="-1.8%" width="103.6%" height="103.6%" filterUnits="objectBoundingBox" id="filter-3">
             <feGaussianBlur stdDeviation="0.5" in="SourceAlpha" result="shadowBlurInner1"></feGaussianBlur>
             <feOffset dx="0" dy="1" in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset>
             <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
@@ -36,13 +19,13 @@
                 <feMergeNode in="shadowMatrixInner2"></feMergeNode>
             </feMerge>
         </filter>
-        <path d="M19.6,15.4 C20.759798,15.4 21.7,16.340202 21.7,17.5 L21.7,38.5 C21.7,39.659798 20.759798,40.6 19.6,40.6 C18.440202,40.6 17.5,39.659798 17.5,38.5 L17.5,17.5 C17.5,16.340202 18.440202,15.4 19.6,15.4 Z M28,15.4 C29.159798,15.4 30.1,16.340202 30.1,17.5 L30.1,38.5 C30.1,39.659798 29.159798,40.6 28,40.6 C26.840202,40.6 25.9,39.659798 25.9,38.5 L25.9,17.5 C25.9,16.340202 26.840202,15.4 28,15.4 Z M36.4,15.4 C37.559798,15.4 38.5,16.340202 38.5,17.5 L38.5,38.5 C38.5,39.659798 37.559798,40.6 36.4,40.6 C35.240202,40.6 34.3,39.659798 34.3,38.5 L34.3,17.5 C34.3,16.340202 35.240202,15.4 36.4,15.4 Z" id="path-5"></path>
-        <filter x="-14.3%" y="-11.9%" width="128.6%" height="123.8%" filterUnits="objectBoundingBox" id="filter-6">
+        <path d="M19.6,15.4 C20.759798,15.4 21.7,16.340202 21.7,17.5 L21.7,38.5 C21.7,39.659798 20.759798,40.6 19.6,40.6 C18.440202,40.6 17.5,39.659798 17.5,38.5 L17.5,17.5 C17.5,16.340202 18.440202,15.4 19.6,15.4 Z M28,15.4 C29.159798,15.4 30.1,16.340202 30.1,17.5 L30.1,38.5 C30.1,39.659798 29.159798,40.6 28,40.6 C26.840202,40.6 25.9,39.659798 25.9,38.5 L25.9,17.5 C25.9,16.340202 26.840202,15.4 28,15.4 Z M36.4,15.4 C37.559798,15.4 38.5,16.340202 38.5,17.5 L38.5,38.5 C38.5,39.659798 37.559798,40.6 36.4,40.6 C35.240202,40.6 34.3,39.659798 34.3,38.5 L34.3,17.5 C34.3,16.340202 35.240202,15.4 36.4,15.4 Z" id="path-4"></path>
+        <filter x="-10.0%" y="-8.3%" width="120.0%" height="116.7%" filterUnits="objectBoundingBox" id="filter-5">
             <feGaussianBlur stdDeviation="0.5" in="SourceAlpha" result="shadowBlurInner1"></feGaussianBlur>
             <feOffset dx="0" dy="0" in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset>
             <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
             <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.25 0" type="matrix" in="shadowInnerInner1" result="shadowMatrixInner1"></feColorMatrix>
-            <feGaussianBlur stdDeviation="2" in="SourceAlpha" result="shadowBlurInner2"></feGaussianBlur>
+            <feGaussianBlur stdDeviation="1.5" in="SourceAlpha" result="shadowBlurInner2"></feGaussianBlur>
             <feOffset dx="0" dy="1" in="shadowBlurInner2" result="shadowOffsetInner2"></feOffset>
             <feComposite in="shadowOffsetInner2" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner2"></feComposite>
             <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.75 0" type="matrix" in="shadowInnerInner2" result="shadowMatrixInner2"></feColorMatrix>
@@ -58,20 +41,19 @@
         </filter>
     </defs>
     <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Slider/Alt" transform="translate(-137.000000, 6.000000)">
-            <g id="Slider/Handle" transform="translate(143.500000, 0.000000)">
+        <g id="Slider/Handle">
+            <g id="Handle">
                 <mask id="mask-2" fill="white">
                     <use xlink:href="#path-1"></use>
                 </mask>
                 <g id="Base">
-                    <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-1"></use>
                     <use fill="#00E9BA" fill-rule="evenodd" xlink:href="#path-1"></use>
-                    <use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-1"></use>
+                    <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-1"></use>
                 </g>
                 <g id="Handle-icon" mask="url(#mask-2)">
-                    <use fill-opacity="0.05" fill="#00E9BA" fill-rule="evenodd" xlink:href="#path-5"></use>
-                    <use fill="black" fill-opacity="1" filter="url(#filter-6)" xlink:href="#path-5"></use>
-                    <path stroke-opacity="0.1" stroke="#000000" stroke-width="0.5" d="M19.6,15.15 C20.8978692,15.15 21.95,16.2021308 21.95,17.5 L21.95,38.5 C21.95,39.7978692 20.8978692,40.85 19.6,40.85 C18.3021308,40.85 17.25,39.7978692 17.25,38.5 L17.25,17.5 C17.25,16.2021308 18.3021308,15.15 19.6,15.15 Z M28,15.15 C29.2978692,15.15 30.35,16.2021308 30.35,17.5 L30.35,38.5 C30.35,39.7978692 29.2978692,40.85 28,40.85 C26.7021308,40.85 25.65,39.7978692 25.65,38.5 L25.65,17.5 C25.65,16.2021308 26.7021308,15.15 28,15.15 Z M36.4,15.15 C37.6978692,15.15 38.75,16.2021308 38.75,17.5 L38.75,38.5 C38.75,39.7978692 37.6978692,40.85 36.4,40.85 C35.1021308,40.85 34.05,39.7978692 34.05,38.5 L34.05,17.5 C34.05,16.2021308 35.1021308,15.15 36.4,15.15 Z"></path>
+                    <use fill-opacity="0.05" fill="#00E9BA" fill-rule="evenodd" xlink:href="#path-4"></use>
+                    <use fill="black" fill-opacity="1" filter="url(#filter-5)" xlink:href="#path-4"></use>
+                    <path stroke-opacity="0.1" stroke="#000000" stroke-width="0.1" d="M19.6,15.35 C20.7874122,15.35 21.75,16.3125878 21.75,17.5 L21.75,38.5 C21.75,39.6874122 20.7874122,40.65 19.6,40.65 C18.4125878,40.65 17.45,39.6874122 17.45,38.5 L17.45,17.5 C17.45,16.3125878 18.4125878,15.35 19.6,15.35 Z M28,15.35 C29.1874122,15.35 30.15,16.3125878 30.15,17.5 L30.15,38.5 C30.15,39.6874122 29.1874122,40.65 28,40.65 C26.8125878,40.65 25.85,39.6874122 25.85,38.5 L25.85,17.5 C25.85,16.3125878 26.8125878,15.35 28,15.35 Z M36.4,15.35 C37.5874122,15.35 38.55,16.3125878 38.55,17.5 L38.55,38.5 C38.55,39.6874122 37.5874122,40.65 36.4,40.65 C35.2125878,40.65 34.25,39.6874122 34.25,38.5 L34.25,17.5 C34.25,16.3125878 35.2125878,15.35 36.4,15.35 Z"></path>
                 </g>
             </g>
         </g>
