@@ -115,7 +115,9 @@ export const getData = () => ({
             name: 'solitude',
             type: 'button',
             bot: {
-                prompts: ["It's a state of mind, where you are able to relax, be creative", "…", "Well, a feeling of contentment and comfort. 😌"],
+                prompts: [  "It's a state of mind, where you are able to relax, be creative",
+                            "…",
+                            "Well, a feeling of contentment and comfort. 😌"],
                 responds: []
             },
             user: {
@@ -136,7 +138,9 @@ export const getData = () => ({
             name: 'readyToBegin',
             type: 'button',
             bot: {
-                prompts: ["Okay, I'm gonna ask you a few questions", "What you answer will stay between you and me, and will only be used to locate a nice area for you.", "When you answer think of how you feel right now 💖"],
+                prompts: [  "Okay, I'm gonna ask you a few questions",
+                            "What you answer will stay between you and me, and will only be used to locate a nice area for you.",
+                            "When you answer think of how you feel right now 💖"],
                 responds: null
             },
             user: {
@@ -201,7 +205,7 @@ export const getData = () => ({
             type: 'slider',
             bot: {
                 prompts: ['How relaxed do you feel?'],
-                responds: ["It's good to think about that sometimes."]
+                responds: ["It's good to think about that from time to time."]
             },
             user: {
                 options: [
@@ -416,7 +420,11 @@ export const getData = () => ({
             name: 'duration',
             type: 'slider',
             bot: {
-                prompts: ["...","Alright, now I understand your mood", 'The last thing I need to know is, how much time do you have to spend?'],
+                prompts: [  "Let me process your answers, hang on for a second",
+                            "...",
+                            "...",
+                            "Alright, now I understand your mood",
+                            'The last thing I need to know is, how much time do you have to spend?'],
                 responds: []
             },
             user: {
