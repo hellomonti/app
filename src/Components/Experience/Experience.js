@@ -9,6 +9,15 @@ class Experience extends Component {
         showButton: false
     }
 
+    componentDidMount() {
+        setTimeout(
+            () => this.setState({
+                showButton: true
+            }),
+            4800
+        )
+    }
+
     scrollToBottom = () => {
         window.scrollBy({
             top: 400,
@@ -56,15 +65,19 @@ class Experience extends Component {
                         isLast={true}
                     />
                     <div style={{ height: '15px' }} />
-                    <div style={{ textAlign: 'center' }}>
-                        <Button
-                            text='Lets begin..'
-                            returnValue={'start'}
-                            onClick={this.updateValue}
-                            primary={true}
-                        />
-                    </div>
-                    <BreatheOrb started={started} />
+                    {this.state.showButton &&
+                        <div>
+                            <div style={{ textAlign: 'center' }}>
+                                <Button
+                                    text='Lets begin..'
+                                    returnValue={'start'}
+                                    onClick={this.updateValue}
+                                    primary={true}
+                                />
+                            </div>
+                            <BreatheOrb started={started} />
+                        </div>
+                    }
                 </div>
             </div>
         );

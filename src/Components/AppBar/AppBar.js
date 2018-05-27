@@ -7,7 +7,7 @@ class AppBar extends Component {
             'isVisited',
             JSON.stringify(
                 {
-                    visited: true
+                    visited: false
                 }
             )
         )

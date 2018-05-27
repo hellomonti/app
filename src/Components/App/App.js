@@ -53,9 +53,11 @@ class App extends Component {
 
     if (localStorage.getItem('isVisited')) {
       this.setState({
-        beenVisited: JSON.parse(localStorage.getItem('isVisited'))
+        beenVisited: JSON.parse(localStorage.getItem('isVisited')).visited
       })
     }
+
+    console.log(JSON.parse(localStorage.getItem('isVisited')));
   }
 
   updateStateValue = (entityType) => {
