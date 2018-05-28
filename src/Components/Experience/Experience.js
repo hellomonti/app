@@ -51,7 +51,7 @@ class Experience extends Component {
                     "Let me check it for you",
                     "...",
                     "This air is almost spotless! No sign of exhaust gasses, and only tiny amounts of particle pollution.",
-                    "Lets take some deep breaths together!"],
+                    "Lets take some deep breaths together! When the orb expands, breathe in the clean air. Breathe out as the orb shrinks"],
                 responds: null
             },
             user: {
