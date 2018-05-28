@@ -6,7 +6,8 @@ import Button from '../Button/Button';
 class Experience extends Component {
     state = {
         started: false,
-        showButton: false
+        showButton: false,
+        showFinal: false
     }
 
     componentDidMount() {
@@ -14,7 +15,7 @@ class Experience extends Component {
             () => this.setState({
                 showButton: true
             }),
-            4800
+            10000
         )
     }
 
@@ -32,8 +33,15 @@ class Experience extends Component {
         })
     }
 
+    orbCompleted = () => {
+        this.setState({
+            showFinal: true,
+            started: false
+        })
+    }
+
     render() {
-        const { started } = this.state;
+        const { started, showFinal } = this.state;
         const suggestionEntity = {
             name: 'findAreas',
             type: 'button',
@@ -57,6 +65,24 @@ class Experience extends Component {
             }
         }
 
+        const afterOrbEntity = {
+            name: 'findAreas',
+            type: 'button',
+            bot: {
+                prompts: ["Aaaah, fresh air is nice, and it helps you thinking clearer!"],
+                responds: null
+            },
+            user: {
+                options: [
+
+                ],
+                answer: {
+                    answer: null,
+                    value: null
+                }
+            }
+        }
+
         return (
             <div>
                 <div style={{ height: '65px' }} />
@@ -65,7 +91,7 @@ class Experience extends Component {
                         entityType={suggestionEntity}
                         scrollToBottom={this.scrollToBottom}
                         displayActionArea={() => { }}
-                        isLast={true}
+                        isLast={!showFinal}
                     />
                     <div style={{ height: '15px' }} />
                     {this.state.showButton &&
@@ -79,8 +105,20 @@ class Experience extends Component {
                                 />
                             </div>
                             <div style={{ height: '15px' }} />
-                            <BreatheOrb started={started} />
+                            <BreatheOrb started={started} orbCompleted={this.orbCompleted} />
                         </div>
+                    }
+                    {showFinal &&
+                        <div>
+                            <ChatEntity
+                                entityType={afterOrbEntity}
+                                scrollToBottom={this.scrollToBottom}
+                                displayActionArea={() => { }}
+                                isLast={true}
+                            />
+                            <div style={{ height: '15px' }} />
+                        </div>
+
                     }
                 </div>
             </div>
