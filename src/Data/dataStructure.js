@@ -5,14 +5,14 @@ export const getData = () => ({
             type: 'button',
             bot: {
                 prompts: ["Hello, i'm Monti 👋",
-                          "I can help you find areas in the city that matches your state of mind.",
+                          "I can help you find nice areas in the city to match your state of mind.",
                           "Shall we begin?"],
                 responds: null
             },
             user: {
                 options: [
                     {
-                        answer: 'How can you find areas?',
+                        answer: 'How can you find nice areas?',
                         value: 1,
                         next: "findAreas",
                         primary: false
@@ -40,7 +40,7 @@ export const getData = () => ({
             name: 'findAreas',
             type: 'button',
             bot: {
-                prompts: ["I can hear 👂, smell 👃 and see 👀 things in the city that people can't perceive.",
+                prompts: ["I can hear 👂, smell 👃 and see 👀 things in the city that people can't normally perceive.",
                           "Me and my other friends collect this knowledge all the time.",
                           "And we can use this information to find suitable locations that cater for your mood."],
                 responds: null
@@ -115,7 +115,9 @@ export const getData = () => ({
             name: 'solitude',
             type: 'button',
             bot: {
-                prompts: ["It's a state of mind, where you are able to relax, be creative", "…", "Well, a feeling of contentment and comfort. 😌"],
+                prompts: [  "Solitude is a state of mind, where you are able to relax, be creative",
+                            "…",
+                            "Well, a feeling of contentment and comfort. 😌"],
                 responds: []
             },
             user: {
@@ -136,7 +138,9 @@ export const getData = () => ({
             name: 'readyToBegin',
             type: 'button',
             bot: {
-                prompts: ["Okay, I'm gonna ask you a few questions", "When you answer think of how you feel right now 💖"],
+                prompts: [  "Okay, I'm gonna ask you a few questions",
+                            "What you answer will stay between you and me, and will only be used to locate a nice area for you.",
+                            "When you answer think of how you feel right now 💖"],
                 responds: null
             },
             user: {
@@ -201,7 +205,7 @@ export const getData = () => ({
             type: 'slider',
             bot: {
                 prompts: ['How relaxed do you feel?'],
-                responds: ["It's good to think about that sometimes."]
+                responds: ["It's good to think about that from time to time."]
             },
             user: {
                 options: [
@@ -273,7 +277,7 @@ export const getData = () => ({
             type: 'slider',
             bot: {
                 prompts: ['How confident do you feel?'],
-                responds: []
+                responds: ["We are getting closer. Just a few more questions"]
             },
             user: {
                 options: [
@@ -309,7 +313,7 @@ export const getData = () => ({
             type: 'slider',
             bot: {
                 prompts: ['How interested are you in socialising?'],
-                responds: []
+                responds: ["I know that feeling."]
             },
             user: {
                 options: [
@@ -345,7 +349,7 @@ export const getData = () => ({
             type: 'slider',
             bot: {
                 prompts: ['How useful do you feel?'],
-                responds: []
+                responds: ["That's a bit robotic, isn't it?🤖"]
             },
             user: {
                 options: [
@@ -381,7 +385,7 @@ export const getData = () => ({
             type: 'slider',
             bot: {
                 prompts: ['How well do you deal with problems?'],
-                responds: []
+                responds: ["Well, you're doing great right now."]
             },
             user: {
                 options: [
@@ -416,7 +420,11 @@ export const getData = () => ({
             name: 'duration',
             type: 'slider',
             bot: {
-                prompts: ["Alright now I understand your mood", 'The last thing I need to know is, how much time do you have to spend?'],
+                prompts: [  "Let me process your answers, hang on for a second",
+                            "...",
+                            "...",
+                            "Alright, now I understand your mood",
+                            'The last thing I need to know is, how much time do you have to spend?'],
                 responds: []
             },
             user: {

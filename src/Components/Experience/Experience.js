@@ -39,7 +39,10 @@ class Experience extends Component {
             type: 'button',
             bot: {
                 prompts: ["Nice to see you. Hope you had a good walk!",
-                    "The air here is super clean! I just measured the CO level, and its one of the lowest i've ever seen in Aalborg",
+                    "The air here should be super clean!",
+                    "Let me check it for you",
+                    "...",
+                    "This air is almost spotless! No sign of exhaust gasses, and only tiny amounts of particle pollution.",
                     "Lets take some deep breaths together!"],
                 responds: null
             },
