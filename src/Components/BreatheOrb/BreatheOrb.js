@@ -33,7 +33,7 @@ class BreatheOrb extends Component {
     if (next.started) {
       setTimeout(
         () => setInterval(
-          () => this.setProgress(this.state.progress + 5),
+          () => this.setProgress(this.state.progress + 10),
           7500
         ),
         500
@@ -62,7 +62,7 @@ class BreatheOrb extends Component {
 
   setProgress(value) {
 
-    if(this.state.progress < 99) {
+    if(this.state.progress < 100) {
       const RADIUS = 80;
       const CIRCUMFERENCE = 2 * Math.PI * RADIUS;
   
@@ -77,9 +77,11 @@ class BreatheOrb extends Component {
         strokeDasharray: CIRCUMFERENCE,
         progress: value
       })
-    } else {
-      this.props.orbCompleted();
-    }
+
+      if(dashoffset === 0) {
+        this.props.orbCompleted();
+      }
+    } 
   }
 
 
