@@ -69,7 +69,10 @@ class Experience extends Component {
             name: 'findAreas',
             type: 'button',
             bot: {
-                prompts: ["Aaaah, fresh air is nice, and it helps you thinking clearer!"],
+                prompts: [  "Nice job! You have just stocked up on 30 liters of fresh air",
+                            "Hope it helped clear your head!",
+                            "We are done for now. Remember to take time to enjoy the area around you.",
+                            "Feel free to reach out to me whenever you need to clear your head!"],
                 responds: null
             },
             user: {

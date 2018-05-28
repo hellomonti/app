@@ -349,7 +349,7 @@ export const getData = () => ({
             type: 'slider',
             bot: {
                 prompts: ['How useful do you feel?'],
-                responds: ["That's a bit robotic, isn't it?🤖"]
+                responds: ["Okay, now let me know..."]
             },
             user: {
                 options: [
@@ -421,7 +421,6 @@ export const getData = () => ({
             type: 'slider',
             bot: {
                 prompts: [  "Let me process your answers, hang on for a second",
-                            "...",
                             "...",
                             "Alright, now I understand your mood",
                             'The last thing I need to know is, how much time do you have to spend?'],

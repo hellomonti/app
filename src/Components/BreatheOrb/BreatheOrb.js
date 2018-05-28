@@ -34,9 +34,9 @@ class BreatheOrb extends Component {
       setTimeout(
         () => setInterval(
           () => this.setProgress(this.state.progress + 5),
-          500
+          7500
         ),
-        7500
+        500
       )
       
     }

@@ -49,7 +49,7 @@ class Suggestion extends Component {
                 elem.style.backgroundImage = `url('${suggestion.image}')`;
                 this.scrollToBottom();
             },
-            4800
+            8000
         )
     }
 
