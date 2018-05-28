@@ -222,8 +222,8 @@ class Suggestion extends Component {
                             isLast={true}
                             hideMonti={false}
                         />
+                        <div style={{ height: '15px' }} />
                         {navButton && <div className='button-row' >
-                            <div style={{ height: '15px' }} />
                             <Fab yCoord={suggestion.yCoord} xCoord={suggestion.xCoord}>
                                 <Button
                                     text='Show me the way!'

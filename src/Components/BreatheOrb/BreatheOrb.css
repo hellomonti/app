@@ -5,7 +5,7 @@
   border-radius: 150px;
   background: #fff2d5;
   margin: 0 auto;
-  margin-top: 50px;
+  margin-top: 80px;
   padding: 0;
   margin-top: 20px;
   margin-bottom: 50px;
@@ -34,4 +34,28 @@
 @keyframes orb_1 {
   from { transform: scale(1); background: #207275;}
       to { transform: scale(3); background: #b5ebe0;}
+}
+
+.demo {
+  position: absolute;
+  top: -15px;
+  left: -20px;
+}
+
+.progress {
+  transform: rotate(-90deg);
+}
+
+.progress__meter,
+.progress__value {
+  fill: none;
+}
+
+.progress__meter {
+  stroke: #e6e6e6;
+}
+
+.progress__value {
+  stroke: #f77a52;
+  stroke-linecap: round;
 }

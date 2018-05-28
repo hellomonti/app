@@ -75,6 +75,7 @@ class Experience extends Component {
                                     primary={true}
                                 />
                             </div>
+                            <div style={{ height: '15px' }} />
                             <BreatheOrb started={started} />
                         </div>
                     }
